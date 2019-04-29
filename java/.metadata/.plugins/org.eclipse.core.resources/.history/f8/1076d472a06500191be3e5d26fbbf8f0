@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+var i = 3, j = 5;
+var resultObj = document.getElementById("result");
+</script>
+</head>
+<body>
+	<input type="text" id="result">
+</body>
+</html>

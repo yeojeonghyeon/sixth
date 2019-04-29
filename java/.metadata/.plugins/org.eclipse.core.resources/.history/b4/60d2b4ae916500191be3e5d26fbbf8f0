@@ -1,0 +1,9 @@
+package ac.scggi.app.reference;
+
+public class Student {
+	public String name;
+	public String address;
+	public int kor;
+	public int eng;
+	public int math;
+}

@@ -1,0 +1,12 @@
+package ac.scggi.app.inheritance;
+
+public class Vehicle {
+	public String whereUsing;
+	public int speed;
+	public void startEngine() {
+		System.out.println("Vehicle's startEngine");
+	}
+	public boolean applyAcc(int amount) {
+		
+	}
+}

@@ -1,0 +1,7 @@
+package ac.scggi.app.inheritance;
+
+public class GroundVehicle extends Vehicle {
+	public GroundVehicle(String whereUsing, int speed) {
+		super(whereUsing, speed);
+	}
+}

@@ -1,0 +1,23 @@
+package ac.scggi.app;
+
+public class Car {
+	String manufacturer;//제조사
+	String color;
+	int price;
+	String oilType;
+	String transType;
+	String name;
+	// 생성자, 생성자 함수(constructor)
+	// 인스턴스를 생성할 때 실행되는 함수.
+	// 생성자 함수는 리턴형이 없음
+	public Car(String manufacturer, String color, int price, String oilType, String transType, String name) {
+		// this는 명시적으로 인스턴스 변수를 접근
+		// shadowing
+		this.manufacturer = manufacturer;
+		this.color = color;
+		this.price = price;
+		this.oilType = oilType;
+		this.transType = transType;
+		this.name = name;
+	}
+}

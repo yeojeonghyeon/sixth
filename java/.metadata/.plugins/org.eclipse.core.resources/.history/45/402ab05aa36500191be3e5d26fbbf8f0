@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+	var buildMenuBtn = document.getElementById("buildMenuBtn");
+	buildMenuBtn.addEventListener("click", function(){
+		var menuArr = ["봄", "여름", "가을", "겨울"];
+		var menu = document.getElementById("menu");
+		for(var i=0; i<menuArr.length; i++){
+			var liObj = document.createElement("li");
+			liObj.innerText = menuArr[i];
+		}
+	});
+});
+</script>
+</head>
+<body>
+
+</body>
+	<ul id="menu">
+	</ul>
+	<br>
+	<button id="buildMenuBtn">메뉴 생성</button>
+</html>

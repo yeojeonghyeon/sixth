@@ -1,0 +1,8 @@
+package ac.scggi.app.inheritance2;
+
+public class Soldier extends Person {
+	@Override
+	public int makeMoney(int spendingTime) {
+		
+	}
+}

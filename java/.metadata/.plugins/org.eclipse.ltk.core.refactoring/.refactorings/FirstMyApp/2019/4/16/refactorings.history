@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ac.scggi.app.modifier.test.ModifierTest&apos; to &apos;DifferentTest&apos;&#x0D;&#x0A;- Original project: &apos;FirstMyApp&apos;&#x0D;&#x0A;- Original element: &apos;ac.scggi.app.modifier.test.ModifierTest&apos;&#x0D;&#x0A;- Renamed element: &apos;ac.scggi.app.modifier.test.DifferentTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ModifierTest&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;ac.scggi.app.modifier.test{ModifierTest.java[ModifierTest" matchStrategy="1" name="DifferentTest" qualified="false" references="true" similarDeclarations="false" stamp="1555652918483" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,9 @@
+/**
+ * http://usejsdoc.org/
+ */
+
+function foo(){
+	
+}
+
+foo();
