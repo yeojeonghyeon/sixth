@@ -1,9 +1,0 @@
-package ac.scggi.app;
-
-public class Variables {
-	// 인스턴스 변수
-	int varType;
-	public static void main(String[] args) {
-		
-	}
-}

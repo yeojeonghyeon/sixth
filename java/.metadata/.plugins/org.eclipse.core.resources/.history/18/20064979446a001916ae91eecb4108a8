@@ -1,7 +1,0 @@
-package ac.scggi.app.inheritance2;
-
-public class Person {
-	public int makeMoney(int spendingTime) {
-		return 100;
-	}
-}
