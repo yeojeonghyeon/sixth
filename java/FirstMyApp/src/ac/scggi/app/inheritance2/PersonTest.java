@@ -12,6 +12,7 @@ public class PersonTest {
 		
 		for(Person p : list) {
 			System.out.println(p.makeMoney(10));
+			System.out.println(p.makeMoney(10));
 		}
 	}
 }
