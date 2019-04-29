@@ -1,0 +1,11 @@
+package ac.scggi.app.inheritance;
+
+public class Aminal {
+	public void move() {
+		System.out.println("Animals can move.");
+	}
+}
+
+class Dog extends Animal{
+	
+}

@@ -1,0 +1,18 @@
+package ac.scggi.app;
+
+public class PrimitiveType {
+	byte b;
+	short s;
+	int i;
+	long l;
+	
+	float f;
+	double d;
+	
+	char c;
+	boolean isPrimitive;
+	
+	public PrimitiveType() {
+		
+	}
+}

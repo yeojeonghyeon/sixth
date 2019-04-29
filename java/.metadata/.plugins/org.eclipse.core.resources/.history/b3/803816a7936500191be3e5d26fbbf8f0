@@ -1,0 +1,15 @@
+package ac.scggi.app.reference;
+
+public class ItClass {
+	Student[] students;
+	
+	public ItClass(Student[] students) {
+		this.students = students;
+	}
+	
+	public void showInfo() {
+		for(Student stu : students) {
+			stu.showInfo();
+		}
+	}
+}

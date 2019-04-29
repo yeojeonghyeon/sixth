@@ -1,0 +1,12 @@
+package ac.scggi.app;
+
+public class MyApp {
+	// 함수 정의, 주석(실행과 아무런 관련이 없음)
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+	}
+	
+	static int sum(int x, int y) {
+		return x+y;
+	}
+}

@@ -1,0 +1,5 @@
+package ac.scggi.app.inheritance2;
+
+public class Soldier extends Person {
+
+}

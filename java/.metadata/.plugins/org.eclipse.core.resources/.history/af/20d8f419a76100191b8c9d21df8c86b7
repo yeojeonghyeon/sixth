@@ -1,0 +1,10 @@
+package ac.scggi.app;
+
+public class Car {
+	String manufacturer;//Á¦Á¶»ç
+	String color;
+	int price;
+	String oilType;
+	String transType;
+	String name;
+}
