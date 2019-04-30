@@ -33,7 +33,7 @@ class Student extends Member{
 	@Override
 	public void showInfo() {
 		super.showInfo();
-		System.out.println("ÇĞ»ıID "+studentId);
+		System.out.println("í•™ìƒID "+studentId);
 	}
 }
 
@@ -45,6 +45,6 @@ class OrdinaryPerson extends Member{
 	}
 	public void showInfo() {
 		super.showInfo();
-		System.out.println("Åº»ıÀÏ "+bornDate);
+		System.out.println("íƒ„ì‹ ì¼ "+bornDate);
 	}
 }
