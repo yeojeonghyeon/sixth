@@ -20,4 +20,9 @@ public class Shape implements Drawable {
 			draw(p);
 		}
 	}
+	@Override
+	public boolean testGt(int size) {
+		if ( points.size() > size ) return true;
+		return false;
+	}
 }

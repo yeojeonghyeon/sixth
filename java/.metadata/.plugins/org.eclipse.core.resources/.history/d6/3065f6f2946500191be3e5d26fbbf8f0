@@ -1,7 +1,0 @@
-package ac.scggi.app.reference;
-
-public class ItClassTest {
-	public static void main(String[] args) {
-		ItClass javaCls = null;
-	}
-}

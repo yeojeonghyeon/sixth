@@ -21,6 +21,7 @@ public class DrawableTest {
 		
 		for(Shape element : shapes) {
 			element.drawAll();
+			element.showInfo(element);
 		}
 		// java8 stream
 		shapes
