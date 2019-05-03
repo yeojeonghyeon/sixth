@@ -26,6 +26,27 @@
 	  console.log('age' in obj);
 	  console.log(0 in arr);
 	  console.log(1 in arr);
+	  
+	  
+	  var arr1 = [1, 2, 3, 6];
+	  var arr2 = [4, 5];
+
+	  /*
+	  apply 메소드의 2번째 인자는 배열. 이것은 개별 인자로 push 메소드에 전달된다.
+	  [3, 0].concat(arr2) → [3, 0, 4, 5]
+	  arr1.splice(3, 0, 4, 5) → arr1[3]부터 0개의 요소를 제거하고 그자리(arr1[3])에 새로운 요소(4, 5)를 추가한다.
+	  */
+	  console.log([3, 0].concat(arr2));
+	  
+	  Array.prototype.splice.apply(arr1, [3, 0].concat(arr2));
+
+	  console.log(arr1); // [ 1, 2, 3, 4, 5, 6 ]
+	  
+	  var arr3 = [1, 2, 3, 6];
+	  var arr4 = [4, 5];
+	  
+	  arr3.splice(3, 0, ...arr4);
+	  console.log(arr3)
 })();
 
 </script>
