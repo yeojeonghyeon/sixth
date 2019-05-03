@@ -1,5 +1,0 @@
-/**
- * http://usejsdoc.org/
- */
-var buffer = new ArrayBuffer(16);
-var int32View = new Int16Array(buffer);
