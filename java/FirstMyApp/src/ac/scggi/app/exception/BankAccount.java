@@ -18,16 +18,11 @@ public class BankAccount {
 	public void deposite(long amount) {
 		balance = balance + amount;
 	}
-}
-
-class AccountHolder {
-	String ownerName;
-	String ownerId;
-	String accountNo;
-
-	public AccountHolder(String ownerName, String ownerId) {
-		this.ownerName = ownerName;
-		this.ownerId = ownerId;
+	
+	public void showInfo() {
+		System.out.println(owner.ownerName);
+		System.out.println(owner.ownerId);
+		System.out.println(balance);
 	}
 }
 

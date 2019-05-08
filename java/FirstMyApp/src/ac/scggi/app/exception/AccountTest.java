@@ -7,7 +7,7 @@ public class AccountTest {
 		try {
 			ba.withdraw(1000000);
 			ba.withdraw(1000000);
-		} catch (BalanceNotEnoughException | ArithmeticException ae) {
+		} catch (ArithmeticException | BalanceNotEnoughException ae) {
 			// TODO Auto-generated catch block
 			System.out.println(ae.getMessage());
 		}
