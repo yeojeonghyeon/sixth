@@ -6,9 +6,92 @@
 <script>
 // 즉시실행함수
 (function(){
-	var p = {name:"홍길동", address:"순천시 장천로 18"};
+	var p = {name:"홍길동", address:"순천시 장천로 18",
+			 showInfo:function(){
+				 console.log(this.name);
+				 console.log(this.address);
+			 }};
 	p.id = "gildonghong";
 	console.log(p);
+	p.showInfo();
+})();
+
+(function(){
+	const {prop1:p1, prop2:p2} = {prop1:1, prop2:2};
+	console.log(p1, p2);
+	
+	const {prop1, prop2, prop3='c'} = {prop1:'a', prop2:'b'};
+	console.log(prop1, prop2, prop3);
+	
+	const todos = [{id:1, content:'HTML', completed:true},
+		           {id:2, content:'CSS', completed:false},
+		           {id:3, content:'JS', completed:true}
+				  ];
+	const completedTodos = todos.filter(({completed})=>completed);
+	console.log(completedTodos);
+})();
+
+(function(){
+	const prefix = 'prop'
+	var i = 0;
+	const obj = {
+		[`${prefix}-${++i}`]:i,
+		[`${prefix}-${++i}`]:i,
+		[`${prefix}-${++i}`]:i,
+		showInfo(){
+			for(var sdel in this){
+				console.log(this[sdel]);
+			}
+		}
+	};
+	obj.showInfo();
+	console.log(obj);
+})();
+
+(function(){
+	const array = [1, 2, 3];
+	const iterator = array[Symbol.iterator]();
+	console.log(iterator.next());
+	
+	function* counter() {
+		  console.log('첫번째 호출');
+		  yield 1;                  // 첫번째 호출 시에 이 지점까지 실행된다.
+		  console.log('두번째 호출');
+		  yield 2;                  // 두번째 호출 시에 이 지점까지 실행된다.
+		  console.log('세번째 호출');  // 세번째 호출 시에 이 지점까지 실행된다.
+	}
+
+	const generatorObj = counter();
+
+// 	console.log(generatorObj.next()); // 첫번째 호출 {value: 1, done: false}
+// 	console.log(generatorObj.next()); // 두번째 호출 {value: 2, done: false}
+// 	console.log(generatorObj.next()); // 세번째 호출 {value: undefined, done: true}
+	console.log('================================');
+	function* counter(){
+		for(const v of [1,2,3]) yield v;
+	} 
+	let generator = counter();
+	console.log(generator.next());
+	console.log(generator.next());
+	console.log(generator.next());
+	console.log(generator.next());
+})();
+
+(function(){
+	console.log('================================');	
+	function* filter(x, criteria, filter){
+		for(const item of x){
+			if (filter(item, criteria)) yield item;
+		}
+	}
+	var generator = filter([1,2,3], 1, (x,y)=>x>y);
+	console.log(generator.next());
+	console.log(generator.next());
+
+	generator = filter([1,2,3], 1, (x,y)=>x>y);	
+	for(const item of generator){
+		console.log(item);
+	}
 })();
 </script>
 </head>

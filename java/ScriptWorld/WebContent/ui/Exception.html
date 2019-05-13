@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+(function(){
+	function sum(x, y){
+		return x+y;
+	}
+	// Object 객체를 이용해서 객체를 만듦.
+	// new Object();
+	var person = {name:'simith', age:15};
+	console.dir(person);
+	console.log(person.toString());
+	var n = 1;
+	var result = sum(person, n);
+	console.log(typeof result);
+	console.log(result);
+	result = sum();
+	
+	console.log(result);
+	
+	var total = 1/0;
+	console.log(total);
+})();
+
+(function(){
+	try{
+		method();
+	}catch(e){
+		console.dir(e);
+	}finally{
+		console.log('finally');
+	}
+	console.log('outside exception handler');
+//	method();
+	console.log('no exception handler');	
+})();
+
+(function(){
+	try{
+		throwException();
+	}catch(e){
+		console.dir(e);
+	}
+	console.log('outside exception handler');
+	function throwException(){
+		method();
+	}
+})();
+
+(function(){
+"use strict"
+	try{
+		var obj = 1;
+		obj.name = 'smith';
+	}catch(e){
+		console.log(e);
+	}
+})();
+
+(function(){
+"use strict"	
+	undeclaredVar = 100;
+	console.log(undeclaredVar);
+})();
+
+(function(){
+	try{
+	  decodeURIComponent('/login.do');
+	  decodeURIComponent('%');
+	}catch (e){
+	  console.log(e);
+	}
+})();
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
