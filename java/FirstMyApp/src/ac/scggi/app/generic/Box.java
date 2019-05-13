@@ -2,17 +2,17 @@ package ac.scggi.app.generic;
 import ac.scggi.app.exception.BankAccount;
 import ac.scggi.app.exception.AccountHolder;
 
-public class Box {
-	private Object element;
+public class Box<T> {
+	private T element;
 	public Box() {
 	}
-	public Box(Object element) {
+	public Box(T element) {
 		this.element = element;
 	}
-	void set(Object element) {
+	void set(T element) {
 		this.element = element;
 	}
-	Object get() {
+	T get() {
 		return element;
 	}
 }
