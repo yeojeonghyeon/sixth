@@ -20,6 +20,8 @@ public class BoundedTypeParameter {
 		
 		int count = BoundedTypeParameter.<Student>countGreaterThan(stuArr, stu);
 		System.out.println(count);
+		
+		Person<Student> p = new Person<Student>();
 	}
 }
 
@@ -35,5 +37,14 @@ class Student implements Comparable<Student>{
 		// TODO Auto-generated method stub
 		return score-o.score;
 	}
+}
+
+class Person<T extends Student>{
 	
+}
+
+class JuniorStudent extends Student{
+	public JuniorStudent(String name, int score) {
+		super(name, score);
+	}
 }
