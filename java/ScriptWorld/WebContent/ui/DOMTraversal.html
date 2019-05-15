@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+window.onload = function(){
+	var divObj = document.getElementById("header");
+	for(var i=0; i<divObj.childNodes.length; i++){
+		console.dir(divObj.childNodes[i]);
+	}
+	
+	console.log(divObj.nextElementSibling.firstElementChild.value);
+};
+</script>
+</head>
+<body>
+	<div id="header">
+		<p>hello world</p>
+		<h1>heading tag 1</h1>
+	</div>
+	<div>
+		<input type="text" value="hello DOM">
+	</div>
+</body>
+</html>
