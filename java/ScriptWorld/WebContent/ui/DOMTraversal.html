@@ -3,6 +3,45 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<style>
+div#menuDiv {
+	color: green;
+}
+div#menuDiv ul.list{
+	background-color: navy;
+}
+div#menuDiv .list{
+	background-color: orange;
+}
+div#menuDiv ul{
+	background-color: purple;
+}
+ul{
+	background-color: pink;
+}
+div#eventDiv input{
+	border-radius: 2px;
+	cursor: pointer;
+}
+div#eventDiv{
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+</style>
 <script>
 window.onload = function(){
 	var divObj = document.getElementById("header");
@@ -11,7 +50,43 @@ window.onload = function(){
 	}
 	
 	console.log(divObj.nextElementSibling.firstElementChild.value);
+	var menuArr = [["떡볶이", "김밥", "오뎅", "순대"],["김치찌개","된장찌개","순두부찌개","갈비탕"]];
+// 	var ulObj = document.getElementById("changeMenuBtn").previousElementSibling;
+	var ulObj = document.querySelector("div#menuDiv ul.list");
+	var toggleFlag = false;
+	document.getElementById("changeMenuBtn").addEventListener("click", function(){
+		while( ulObj.firstChild ){
+			ulObj.removeChild( ulObj.firstChild );
+		}
+		//처음 클릭(홀수번째 클릭)
+		var liObj;
+		if(!toggleFlag){
+			for(var i=0; i<menuArr[0].length; i++){
+				liObj = document.createElement("li");
+				liObj.innerText = menuArr[0][i];
+				ulObj.appendChild(liObj);
+			}
+		}else{//(짝수번째 클릭)
+			for(var i=0; i<menuArr[1].length; i++){
+				liObj = document.createElement("li");
+				liObj.innerText = menuArr[1][i];
+				ulObj.appendChild(liObj);
+			}
+		}
+		toggleFlag = !toggleFlag;
+	});
+	
+	document.getElementById("secondBtn").onclick = function(){
+		for(;;){
+			
+		}
+	};
+	document.getElementById("thirdBtn").addEventListener("click", function(){
+		alert(this.value);
+	});
+
 };
+
 </script>
 </head>
 <body>
@@ -21,6 +96,23 @@ window.onload = function(){
 	</div>
 	<div>
 		<input type="text" value="hello DOM">
+	</div>
+	<div id="menuDiv">
+		<h1>내가 제일 좋아하는 음식들</h1>
+		<span>목록</span>
+		<ul style="color:red;" class="list" type="circle">
+			<li style="color:black;">1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<input type="button" id="changeMenuBtn" value="메뉴바꾸기">
+	</div>
+	<div id="eventDiv">
+		<input type="button" id="firstBtn" onclick="alert('인라인');" value="인라인">
+		<br/>
+		<input type="button" id="secondBtn" value="onclick property">
+		<br/>
+		<input type="button" id="thirdBtn" value="event listener">
 	</div>
 </body>
 </html>
