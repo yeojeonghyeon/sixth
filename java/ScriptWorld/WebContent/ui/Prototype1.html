@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+(function(){
+	// 생성자 함수로 사용하기 위해서 대문자로 썼음.
+	// Animal.__proto__([[prototype]]) <= Function.prototype
+	// Function을 통해서 만들어진 함수 객체 Animal
+	// Animal.prototype = {constructor: Animal, __proto__: Object.prototype}
+	function Animal(name, noOfLegs){
+		this.name = name;
+		this.noOfLegs = noOfLegs;
+		this.showInfo = function(){
+			console.log("이름은 "+this.name);
+			console.log("다리수는 "+this.noOfLegs);
+		};
+		this.showVersion = function(){
+			console.log(this.version);
+		};
+	}
+	// Animal.prototype = {constructor: Animal, __proto__: Object.prototype, version: 1.0}	
+	Animal.prototype.version = 1.0;
+	//console.dir(Animal);
+	// __proto__ <= Animal.prototype
+	// this.name, this.noOfLegs, this.showInfo, this.showVersion
+	var dog = new Animal("개", 4);
+	// __proto__ <= Animal.prototype
+	// this.name, this.noOfLegs, this.showInfo, this.showVersion	
+	var cat = new Animal("고양이", 4);
+	
+	dog.showInfo();
+	cat.showInfo();
+	
+	dog.showVersion();
+	cat.showVersion();
+	
+	dog.version = 2.0;
+	// this.name, this.noOfLegs, this.showInfo, this.showVersion, this.version	
+	dog.showVersion(); // 2
+	// this.name, this.noOfLegs, this.showInfo, this.showVersion
+	cat.showVersion(); // 1
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

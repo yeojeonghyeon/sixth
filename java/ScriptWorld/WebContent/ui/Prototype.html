@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+(function(){
+	// 생성자 함수
+	Person.prototype.showInfo = function(){
+		console.log(this.id);
+	}
+	function Person(name, age){
+		this.id = name+age;
+	}
+	var p1 = new Person("영희", 13);
+	var p2 = new Person("철수", 13);
+	console.dir(p1);
+	console.dir(p2);
+	p1.showInfo();
+	p2.showInfo();
+})();
+
+(function(){
+	/**
+	 * http://usejsdoc.org/
+	 */
+	function A(a) {
+	  this.varA = a;
+	}
+
+	// A의 정의에서 this.varA는 항상 A.prototype.varA가 가려버리는데
+	// prototype에 varA를 다시 넣는 이유는 무엇인가?
+	A.prototype = {
+	  varA: null,  // 아무것도 안하면서 varA를 쓰는 이유가 있을까?
+	      // 아마도 숨겨진 클래스의 할당 구조를 최적화 하려는 것인가?
+	      // https://developers.google.com/speed/articles/optimizing-javascript#Initializing-instance-variables
+	      // 모든 객체의 varA가 동일하게 초기화 되어야 상기 링크 내용이 유효할 수 있다.
+	  doSomething: function() {
+		  console.dir(this);
+	  }
+	};
+
+	function B(a, b) {
+	  A.call(this, a);
+	  this.varB = b;
+	}
+	B.prototype = Object.create(A.prototype, {
+	  varB: {
+	    value: null, 
+	    enumerable: true, 
+	    configurable: true, 
+	    writable: true 
+	  },
+	  doSomething: { 
+	    value: function() { // override
+	      A.prototype.doSomething.apply(this, arguments); // call super
+	      // ...
+	    },
+	    enumerable: true,
+	    configurable: true, 
+	    writable: true
+	  }
+	});
+	B.prototype.constructor = B;
+	console.dir(B.prototype);
+	var b = new B(1, 2);
+	b.doSomething();
+	console.dir(A);
+})();
+
+(function(){
+	function A(id){
+		this.id = id;
+	}
+	A.prototype = {
+			showInfo: function(){
+				console.log(this.id);
+			},
+			constructor: A
+	};
+	
+	function F(){};
+	var obj = Object.create(A.prototype);
+	// 객체를 __proto__로 하는 새로운 객체를 생성
+	F.prototype = Object.create(A.prototype);
+	F.prototype.constructor = F;
+	F.prototype.showVersion = function(){
+		console.log(this.version);
+	};
+	
+	B.prototype = new F();
+	B.prototype.constructor = B;
+	B.prototype.version = 1.0;
+	
+	function B(id){
+		A.apply(this, [id]);
+	}
+
+	var b = new B("id");
+	
+	console.dir(b);
+	
+	b.showInfo();
+	b.showVersion();
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>
