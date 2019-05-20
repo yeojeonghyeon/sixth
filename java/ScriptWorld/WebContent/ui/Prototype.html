@@ -80,7 +80,7 @@
 	};
 	
 	function F(){};
-	var obj = Object.create(A.prototype);
+// 	var obj = Object.create(A.prototype);
 	// 객체를 __proto__로 하는 새로운 객체를 생성
 	F.prototype = Object.create(A.prototype);
 	F.prototype.constructor = F;
