@@ -1,4 +1,4 @@
-package ac.scggi.app.exception;
+package ac.scggi.app.concurrency;
 
 public class BankAccount {
 	private AccountHolder owner;
@@ -7,17 +7,19 @@ public class BankAccount {
 		this.owner = owner;
 		this.balance = balance;
 	}
-	public long withdraw(long amount) throws BalanceNotEnoughException {
-		if (balance - amount >= 0) {
+	public synchronized long withdraw(long amount) throws BalanceNotEnoughException, InterruptedException {
+		if (balance - amount < 0) {
+			wait(); // 지출을 하는 thread를 재운다.
 			throw new BalanceNotEnoughException("잔액이 부족합니다");
 		}
 		balance = balance - amount;
+		notify();
 		return amount;
 	}
 
-	public void deposite(long amount) {
+	public synchronized void deposite(long amount) {
 		balance = balance + amount;
-		notify();
+		notify(); // 지출을 하는 녀석을 깨운다.
 	}
 	
 	public void showInfo() {

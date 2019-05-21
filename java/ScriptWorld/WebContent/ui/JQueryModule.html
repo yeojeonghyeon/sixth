@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+section.menu_article{
+	float: left;
+	margin: 10px;
+	width: 25%;
+}
+section.menu_article div{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	color: #678ece; 
+}
+article#content::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+section.menu_article{
+	background: linear-gradient(270deg, #abdbcf, #498e23, #333d2e, #dbc69a);
+	background-size: 800% 800%;
+	animation: Gradient 10s linear infinite;
+	animation-play-state: paused;
+}
+
+section.menu_article:hover{
+	animation-play-state: running;
+}
+
+@keyframes Gradient { 
+    0%{background-position:97% 0%}
+    50%{background-position:4% 100%}
+    100%{background-position:97% 0%}
+}	
+
+section#pictureResolver div.imageGallery div.imageItem, section#pictureResolver div.imageAnswer div.imageItem{
+	float: left;
+	margin: 10px;
+	width: 20%;
+	height: 100px;
+	border: 1px solid #dbc69a;
+}
+section#pictureResolver div.imageGallery::after, section#pictureResolver div.imageAnswer::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+</style>
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+$(function(){
+	var resolver = pictureResolver('pictureResolver');
+});
+
+(function(global){
+	var imageArr = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg", "img6.jpg"];
+	var relativePath = "../img/";
+	function pictureResolver(containerId){
+		var containerObj = document.getElementById(containerId);
+		var galleyObj = document.querySelector("#"+containerId+" .imageGallery");
+		var answerObj = document.querySelector("#"+containerId+" .imageAnswer");
+		createGallery(galleyObj, relativePath, imageArr);
+		createAnswer(answerObj, imageArr);
+	}
+	function createGallery(gallery, path, imgArr){
+		for(var img of imgArr){
+			var $div = $('<div class="imageItem" />');
+			var $img = $('<img id=\"'+img+'\" src=\"'+path+img+'\" draggable="true" style="width:100px;height:100px;" />');
+			$img.on("dragstart", function(ev){
+				ev.originalEvent.dataTransfer.setData("text", ev.originalEvent.target.id);
+			});
+			gallery.appendChild($div.append($img)[0]);
+		}
+	}
+	function createAnswer(answer){
+		for(var i=0; i<3; i++){
+			var $div = $('<div class="imageItem" />');
+			$div.on("drop", function(ev){
+				ev.originalEvent.preventDefault();
+				var data = ev.originalEvent.dataTransfer.getData("text");
+				ev.originalEvent.target.appendChild(document.getElementById(data));
+			});
+			$div.on("dragover", function(ev){
+				ev.originalEvent.preventDefault();
+			});
+			answer.appendChild($div[0]);
+		}
+	}	
+	
+	global.pictureResolver = pictureResolver;
+})(typeof window=="object"?window:this);
+</script>
+</head>
+<body>
+	<div id="header">
+		<nav>
+			<a href="#html5">html5</a>
+			<a href="#css3">css3</a>
+			<a href="#jQuery">jQuery</a>
+		</nav>
+	</div>
+	<article id="content">
+		<section class="menu_article">
+			<h2>html5</h2>
+			<div class="html">
+				<p>With HTML you can create your own Website. 
+				   This tutorial teaches you everything about HTML.
+				   HTML is easy to learn - You will enjoy it.</p>
+			</div>
+		</section>
+		<section class="menu_article">
+			<h2>css3</h2>
+			<div class="css">
+				<p>CSS is a language that describes the style of an HTML document.
+				   CSS describes how HTML elements should be displayed.
+				   This tutorial will teach you CSS from basic to advanced.</p>
+			</div>
+		</section>
+		<section class="menu_article">
+			<h2>jQuery</h2>
+			<div class="jQuery">
+				<p>jQuery is a JavaScript Library.
+				   jQuery greatly simplifies JavaScript programming.
+				   jQuery is easy to learn.</p>
+			</div>
+		</section>
+	</article>
+	<section id="pictureResolver">
+		<article>
+			<h2>아래에서 사람이 있는 그림을 모두 드래그 하세요.</h2>
+			<div class="imageGallery">
+<!-- 				<div class="imageItem"><img src=""></div> -->
+			</div>
+			<div class="imageAnswer">
+<!-- 				<div class="imageItem">정답1</div> -->
+			</div>			
+		</article>
+	</section>
+	<footer>
+		<h5>본 저작물은 저작권보호법에 의거하여 보호를 받습니다.</h5>
+	</footer>
+</body>
+</html>
