@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+div#header .title{
+	color: pink;
+}
+
+div#navigation .title{
+	color: red;
+}
+div#evenDiv > ul > li:nth-child(even){
+	color: red;
+}
+div#evenDiv > ul > li:nth-child(odd){
+	color: yellow;
+}
+</style>
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+$(function(){
+//	var toggle = false;
+	$("#changeBtn").on("click", function(){
+		$("div#header > *").toggleClass("title");
+	});
+	
+	$("#navChangeBtn").on("click", function(){
+		$("div").find("p").toggleClass("title");
+	});
+	
+	$("#filterBtn").on("click", function(){
+		$("#filterDiv > *").filter((i, e)=> e.nodeName.toUpperCase() == 'P' ).css({backgroundColor:'red'});
+	});
+});
+</script>
+</head>
+<body>
+	<div id="header">
+		<p>hello</p>
+		<p>hi</p>
+		<p>there</p>
+		<h4>hello</h4>
+		<h4>hi</h4>
+		<h4>there</h4>
+		<div><p>p inside div</p></div>
+	</div>
+	<div id="navigation">
+		<p>hello</p>
+		<p>hi</p>
+		<p>there</p>
+		<h4>hello</h4>
+		<h4>hi</h4>
+		<h4>there</h4>
+	</div>
+	<div id="filterDiv">
+		<p>hello</p>
+		<p>hi</p>
+		<p>there</p>
+		<h4>hello</h4>
+		<h4>hi</h4>
+		<h4>there</h4>
+	</div>
+	<div id="evenDiv">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	</div>
+	<div id="content">
+		<input id="changeBtn" type="button" value="change css">
+		<input id="navChangeBtn" type="button" value="nav change css">
+		<input id="filterBtn" type="button" value="filter css">		
+	</div>
+</body>
+</html>

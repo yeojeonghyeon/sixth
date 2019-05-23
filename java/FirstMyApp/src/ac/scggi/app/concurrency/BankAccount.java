@@ -8,18 +8,18 @@ public class BankAccount {
 		this.balance = balance;
 	}
 	public synchronized long withdraw(long amount) throws BalanceNotEnoughException, InterruptedException {
-		if (balance - amount < 0) {
-			wait(); // 지출을 하는 thread를 재운다.
-			throw new BalanceNotEnoughException("잔액이 부족합니다");
+		while(balance - amount < 0) {
+			wait();
 		}
 		balance = balance - amount;
-		notify();
+		System.out.println(amount+" 지출 "+balance+" 현재");
 		return amount;
 	}
 
 	public synchronized void deposite(long amount) {
 		balance = balance + amount;
-		notify(); // 지출을 하는 녀석을 깨운다.
+		notify();		
+		System.out.println(amount+" 입금");
 	}
 	
 	public void showInfo() {
