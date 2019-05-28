@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+(function(global){
+	class Circle{
+		constructor(r){
+			this.r = r;
+		}
+		getArea(){
+			return this.r*this.r*Math.PI;
+		}
+		static foo(){
+			return 'foo';
+		}
+	}
+	class Cylinder extends Circle{
+		constructor(r, height){
+			super(r);
+			this.height = height;
+		}
+		getArea(){
+			return this.r*this.r*Math.PI*this.height;
+		}
+	}
+	
+// 	global.UserModule = {Circle:Circle, Cylinder:Cylinder};
+	global.UserModule = {Circle, Cylinder};
+	
+})(typeof window!="undefined"?window:this);
+
+(function(){
+	var c = new UserModule.Circle(3);
+	var cy = new UserModule.Cylinder(3, 4);
+	
+	console.log(c.getArea());
+	console.log(cy.getArea());
+	
+	console.log(UserModule.Circle.foo());
+// 	console.log(c.foo());
+	
+	console.dir(UserModule);
+	console.dir(c);
+	console.dir(cy);
+})();
+</script>
+</head>
+<body>
+</body>
+</html>
