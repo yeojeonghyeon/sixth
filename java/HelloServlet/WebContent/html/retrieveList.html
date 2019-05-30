@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+	document.getElementById("retrieveBtn").addEventListener("click", function(){
+		var formObj = document.getElementById("searchForm");
+		var isChecked;
+		for(var ele of formObj.children){
+			if ( ele.name == "rKind" && ele.checked ){
+				isChecked = true;
+				break;
+			}
+		}
+		if ( !isChecked ){
+			alert("사용자, 과목을 선택하세요");
+			return;
+		}
+
+		formObj.submit();
+	});
+});
+</script>
+</head>
+<body>
+	<form id="searchForm" action="/HelloServlet/RetrieveServlet" method="POST">
+		<input type="radio" name="rKind" value="user">사용자&nbsp;
+		<input type="radio" name="rKind" value="subject">과목
+		<input id="retrieveBtn" type="button" value="조회">
+	</form>
+</body>
+</html>
