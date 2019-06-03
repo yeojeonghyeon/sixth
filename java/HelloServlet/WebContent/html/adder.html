@@ -5,11 +5,40 @@
 <title>Insert title here</title>
 <script>
 // submitBtn 버튼에 click 이벤트 헨들러를 달아서, firstNum, secondNum 값이 없을 경우 alert, return
+document.addEventListener("DOMContentLoaded", function(){
+//	var formObj = document.getElementById("searchForm");
+	var firstObj = document.getElementById("firstNum");
+	var secondObj = document.getElementById("secondNum");
+	var regexp = /^\d+/; // 숫자가 하나 이상 올때만 true 
+	document.getElementById("submitBtn").addEventListener("click", function(){
+		if ( firstObj.value ){
+			if ( !regexp.test(firstObj.value) ){
+				alert('숫자만 입력하세요');
+				return;
+			}
+		}else{
+			alert("첫번째 값을 입력하세요.");
+			return;
+		}
+		
+		if ( secondObj.value ){
+			if ( !regexp.test(secondObj.value) ){
+				alert('숫자만 입력하세요');
+				return;
+			}
+		}else{
+			alert("두번째 값을 입력하세요.");
+			return;
+		}
 
+		var formObj = this.parentNode;
+		formObj.submit();
+	});
+});
 </script>
 </head>
 <body>
-	<form action="/HelloServlet/AdderServlet" method="POST">
+	<form id="searchForm" action="/HelloServlet/AdderServlet" method="POST">
 		<input type="text" id="firstNum" name="firstNum" value="" placeholder="첫번째 숫자">
 		<input type="text" id="secondNum" name="secondNum" value="" placeholder="두번째 숫자"><br>
 		<input type="button" id="submitBtn" value="더하기 서비스 호출">

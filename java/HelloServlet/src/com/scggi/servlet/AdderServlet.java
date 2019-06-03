@@ -1,6 +1,8 @@
 package com.scggi.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +29,21 @@ public class AdderServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String firstNum = request.getParameter("firstNum");
+		String secondNum = request.getParameter("secondNum");
+		int sum = Integer.parseInt(firstNum)+Integer.parseInt(secondNum);
+		
+		PrintWriter out = response.getWriter();
+		out.println("<!DOCTYPE html>\r\n" + 
+				"<html>\r\n" + 
+				"<head>\r\n" + 
+				"<meta charset=\"utf-8\">\r\n" + 
+				"<title>Hello Servlet</title>\r\n" + 
+				"</head>\r\n" + 
+				"<body>\r\n" + 
+				"<h5>"+firstNum+"+"+secondNum+"="+sum+"</h5>" +
+				"</body>\r\n" + 
+				"</html>");
 	}
 
 	/**
