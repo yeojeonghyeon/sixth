@@ -1,24 +1,38 @@
 package com.scggi.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.math.BigInteger;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HundredServlet
+ * Servlet implementation class FibonacciServlet
  */
-//@WebServlet("/HundredServlet")
-public class HundredServlet extends HttpServlet {
+//@WebServlet("/FibonacciServlet")
+public class FibonacciServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private BigInteger[] arr;
+	@Override
+	public void init() throws ServletException {
+		ServletConfig sc = getServletConfig();
+		String limitStr = sc.getInitParameter("limit");
+		int limit = limitStr!=null?Integer.parseInt(limitStr):100;
+		arr = new BigInteger[limit];
+		arr[0] = new BigInteger("1");
+		arr[1] = new BigInteger("1");
+		for(int i=2; i<limit; i++) {
+			arr[i] = arr[i-2].add(arr[i-1]);
+		}
+	}
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HundredServlet() {
+    public FibonacciServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,18 +41,9 @@ public class HundredServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		int total = 0;
-		for(int i=0; i<101; i++) {
-			total+=i;
-		}
-		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE html>\r\n" + 
-					"<html>\r\n" + 
-					"<head>");
-		out.println("<title>Hundred Servlet</title>");
-		out.println("<body>");
-		out.println("<h3>1+2+3+........+100="+total+"</h3>");
+		request.setAttribute("arr", arr);
+		RequestDispatcher rd = request.getRequestDispatcher("./jsp/fibo.jsp");
+		rd.forward(request, response);
 	}
 
 	/**

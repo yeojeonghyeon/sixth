@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+header h3.title{
+	text-align: center;
+	color: #a09239;
+}
+
+nav li a:link{
+	text-decoration: none;
+	color: #99af41;
+}
+nav li a:visited{
+	text-decoration: underline;
+}
+nav li a:hover{
+	color: #bf3362;
+}
+nav li a:active{
+	text-decoration: overline;
+}
+
+table#studentTbl th, table#studentTbl td{
+	border: 1px solid #35ad93;
+}
+table#studentTbl{
+	border: 1px solid #0e491c;
+	border-radius: 5px;
+}
+
+</style>
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+$(function(){
+	var $btn = $("#requestBtn");
+	var sendType;
+	$btn.on("click", function(){
+		sendType = $("input[name=sendType]:checked").val();
+		$.ajax({
+			type: 'POST',
+			url: '../StudentServlet',
+			data: {sendType:sendType},
+			success: function(data, textStatus, xhr){
+				var jsonArr = JSON.parse(data);
+				fillTblWithJsonArr(jsonArr);
+			},
+			error: function(xhr, textStatus, errorThrown){
+				
+			}
+		});
+	});
+	
+	var tblObj = document.getElementById("studentTbl");
+	function fillTblWithJsonArr(jsonArr){
+		var thead = tblObj.tHead;
+		var tbody = tblObj.tBodies[0];
+		thead.innerHTML = "";
+		tbody.innerHTML = "";
+		if ( sendType == 'a' ){
+			var hrow = thead.insertRow(0);
+			hrow.insertCell(0).innerHTML = "순번";
+			hrow.insertCell(1).innerHTML = "이름";
+			hrow.insertCell(2).innerHTML = "성별";
+			hrow.insertCell(3).innerHTML = "취미";
+			jsonArr.forEach((e, i)=>{
+				var row = tbody.insertRow(tbody.rows.length);
+				row.insertCell(0).innerHTML = i; 
+				row.insertCell(1).innerHTML = e.name; 
+				row.insertCell(2).innerHTML = e.gender; 
+				row.insertCell(3).innerHTML = e.hobby;
+			});
+		}else{
+			var hrow = thead.insertRow(0);
+			hrow.insertCell(0).innerHTML = "이름";
+			hrow.insertCell(1).innerHTML = "서식지";
+			hrow.insertCell(2).innerHTML = "레벨";
+			jsonArr.forEach((e, i)=>{
+				var row = tbody.insertRow(tbody.rows.length);
+				row.insertCell(0).innerHTML = e.name; 
+				row.insertCell(1).innerHTML = e.whereLives;
+				row.insertCell(2).innerHTML = e.lv; 
+			});			
+		}
+	}
+});
+</script>
+</head>
+<body>
+	<header>
+		<h3 class="title">서블릿에 Ajax로 데이터 주고 받기</h3>
+	</header>
+	<nav>
+		<span>메뉴</span>
+		<ul>
+			<li><a href="../index.html">돌아가기</a></li>
+		</ul>
+	</nav>
+	<aside></aside>
+	<section>
+		<article>
+			<div>
+				<input name="sendType" type="radio" value="a" checked>학생
+				<input name="sendType" type="radio" value="b">동물
+				<input type="button" id="requestBtn" value="ajax 호출">
+			</div>
+			<div>
+				<table id="studentTbl" style="width:60%;">
+					<colgroup>
+						<col span=4 style="width:25%;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>순번</th>
+							<th>이름</th>
+							<th>성별</th>
+							<th>취미</th>
+						</tr>
+					</thead>
+					<tbody>
+<!-- 						<tr> -->
+<!-- 							<td>1</td> -->
+<!-- 							<td>홍길동</td> -->
+<!-- 							<td>남</td> -->
+<!-- 							<td>대나무 뽀개기</td> -->
+<!-- 						</tr> -->
+					</tbody>
+				</table>
+			</div>
+		</article>
+	</section>
+</body>
+</html>

@@ -1,24 +1,29 @@
 package com.scggi.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.scggi.servlet.temp.Person;
+
 /**
  * Servlet implementation class HundredServlet
  */
-//@WebServlet("/HundredServlet")
-public class HundredServlet extends HttpServlet {
+@WebServlet("/HundredServlet2")
+public class HundredServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HundredServlet() {
+    public HundredServlet2() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,13 +37,17 @@ public class HundredServlet extends HttpServlet {
 		for(int i=0; i<101; i++) {
 			total+=i;
 		}
-		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE html>\r\n" + 
-					"<html>\r\n" + 
-					"<head>");
-		out.println("<title>Hundred Servlet</title>");
-		out.println("<body>");
-		out.println("<h3>1+2+3+........+100="+total+"</h3>");
+		
+		Map<String, Person> map = new HashMap<String, Person>();
+		
+		Person p = new Person("철수", 38);
+		
+		map.put("person", p);
+		request.setAttribute("person", p);
+		request.setAttribute("map", map);
+		request.setAttribute("result", total);
+		RequestDispatcher rd = request.getRequestDispatcher("jsp/hundred.jsp");
+		rd.forward(request, response);
 	}
 
 	/**

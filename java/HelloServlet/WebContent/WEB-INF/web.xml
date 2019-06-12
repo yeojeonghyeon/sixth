@@ -29,4 +29,20 @@
     <servlet-name>hundredServlet</servlet-name>
     <url-pattern>/HundredServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>fibonacciServlet</servlet-name>
+    <servlet-class>com.scggi.servlet.FibonacciServlet</servlet-class>
+    <init-param>
+      <param-name>limit</param-name>
+      <param-value>100</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>fibonacciServlet</servlet-name>
+    <url-pattern>/FibonacciServlet</url-pattern>
+  </servlet-mapping>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/jsp/NotFound.jsp</location>
+  </error-page>
 </web-app>

@@ -66,7 +66,7 @@ public class FormTestServlet extends HttpServlet {
 				"		<article>\r\n" + 
 				"				<div class=\"grid-container\">\r\n" + 
 				"					<div class=\"grid-item\"><span>이름:&nbsp;</span></div>\r\n" + 
-				"					<div class=\"grid-item\"><input type=\"text\" name=\"userName\" placeholder=\"이름을 입력하세요!\"></div>\r\n" + 
+				"					<div class=\"grid-item\"><input type=\"text\" name=\"userName\" value=\""+userName+"\" placeholder=\"이름을 입력하세요!\"></div>\r\n" + 
 				"					<div class=\"grid-item\"><span>나이:&nbsp;</span></div>\r\n" + 
 				"					<div class=\"grid-item\"><input type=\"text\" name=\"userAge\" value="+userAge+"></div>\r\n" + 
 				"				</div>\r\n" + 

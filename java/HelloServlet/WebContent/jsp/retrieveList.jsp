@@ -6,6 +6,7 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<script src='${pageContext.request.contextPath}/js/jquery-3.4.1.js'></script>
 </head>
 <body>
 <%

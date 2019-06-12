@@ -63,7 +63,7 @@ $(function(){
 		var galleyObj = document.querySelector("#"+containerId+" .imageGallery");
 		var answerObj = document.querySelector("#"+containerId+" .imageAnswer");
 		createGallery(galleyObj, relativePath, imageArr);
-		createAnswer(answerObj, imageArr);
+		createAnswer(answerObj);
 	}
 	function createGallery(gallery, path, imgArr){
 		for(var img of imgArr){
