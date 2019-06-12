@@ -45,10 +45,24 @@ ul#menuList::after{
 <script src="../js/chainedSelect.js"></script>
 <script>
 $(function(){
-	var cm = new ChainModule(["first","second","third","forth"]);
-	cm.init();
+	var $btn = $("#requestBtn");
+	$btn.on("click", function(){
+		$.ajax({
+			type: 'POST',
+			url: '../ChainedServlet',
+			data: {},
+			success: function(data, textStatus, xhr){
+				var jsonArr = JSON.parse(data);
+				var menuData = {data:jsonArr};
+				var cm = new ChainModule(["first","second","third","forth"], menuData);
+				cm.init();				
+			},
+			error: function(xhr, textStatus, errorThrown){
+				
+			}
+		});
+	});	
 });
-
 </script>
 </head>
 <body>
