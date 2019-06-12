@@ -53,7 +53,6 @@ public class StudentServlet extends HttpServlet {
 		}
 		response.setContentType("plain/text;charset=utf-8");
 		response.getWriter().append(jsonStr);
-		
 	}
 
 	/**
