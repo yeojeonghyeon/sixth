@@ -23,6 +23,8 @@ public class BoundedTypeParameter {
 		
 		Person<Student> p = new Person<Student>();
 	}
+	
+	public <T> 
 }
 
 class Student implements Comparable<Student>{

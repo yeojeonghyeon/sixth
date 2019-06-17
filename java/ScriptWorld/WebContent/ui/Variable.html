@@ -41,6 +41,10 @@ timeCounter.increment();
 timeCounter.increment();
 timeCounter.showCount();
 
+var a = {prop:{name:"홍길동",
+			   showName:function(){alert(this.name); return this;}}};
+			   
+a.prop.showName().showName().showName();			   
 
 </script>
 </head>

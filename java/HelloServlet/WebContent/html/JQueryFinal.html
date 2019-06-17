@@ -52,10 +52,7 @@ $(function(){
 			url: '../ChainedServlet',
 			data: {},
 			success: function(data, textStatus, xhr){
-				var jsonArr = JSON.parse(data);
-				var menuData = {data:jsonArr};
-				var cm = new ChainModule(["first","second","third","forth"], menuData);
-				cm.init();				
+				new ChainModule(["first","second","third","forth"], {data:JSON.parse(data)}).init();
 			},
 			error: function(xhr, textStatus, errorThrown){
 				

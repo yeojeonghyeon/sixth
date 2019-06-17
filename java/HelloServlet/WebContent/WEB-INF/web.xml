@@ -41,6 +41,10 @@
     <servlet-name>fibonacciServlet</servlet-name>
     <url-pattern>/FibonacciServlet</url-pattern>
   </servlet-mapping>
+  <context-param>
+    <param-name>DB_NAME</param-name>
+    <param-value>Oracle</param-value>
+  </context-param>
   <error-page>
     <error-code>404</error-code>
     <location>/jsp/NotFound.jsp</location>

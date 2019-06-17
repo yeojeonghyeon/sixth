@@ -9,4 +9,5 @@
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.scggi.servlet.temp.MenuItem"/>
 </qualifiedTypeNameHistroy>
