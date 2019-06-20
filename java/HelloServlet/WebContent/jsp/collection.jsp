@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div>
-		<h6>배열에서 꺼내오는 el</h6>
+		<h5>배열에서 꺼내오는 el</h5>
 		<ul>
 			<c:if test="${not empty students}">
 				<c:forEach items="${students}" var="student">
@@ -17,10 +17,16 @@
 				</c:forEach>
 			</c:if>
 		</ul>
+		<span>${students[0].name} ${students[1].name} ${students[2].name} ${students[3].name} ${students[4].name}</span>
 	</div>
 	<div>
-		<h6>List에서 꺼내오는 el</h6>
+		<h5>List에서 꺼내오는 el</h5>
 		<ul>
+			<c:if test="${not empty list}">
+				<c:forEach items="${list}" var="item">
+					<li>${item.name} ${item.gender} ${item.hobby}</li>
+				</c:forEach>
+			</c:if>		
 		</ul>
 	</div>
 </body>

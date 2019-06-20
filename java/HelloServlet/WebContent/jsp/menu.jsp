@@ -74,9 +74,21 @@ section.menu_section::after{
 		</article>
 	</section>
 <div>
+<!-- 		directive 지시자 -->
 		<%@ include file="today.jsp" %>
 <br>		
 <%=String.format("%TY년 %Tm월 %Td일", now, now, now)%>
+<br>
+<!-- 		표준 액션 태그 -->
+		<jsp:include page="today.jsp">
+			<jsp:param name="param1" value="파라미터1" />
+			<jsp:param name="param2" value="파라미터2" />
+		</jsp:include>
+		
+		<c:import url="today.jsp">
+			<c:param name="param1" value="파라미터1" />
+			<c:param name="param2" value="파라미터2" />
+		</c:import>
 </div>		
 </body>
 </html>

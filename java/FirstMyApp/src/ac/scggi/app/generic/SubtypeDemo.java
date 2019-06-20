@@ -10,4 +10,9 @@ public class SubtypeDemo {
 		Collection<Number> c = al;
 		List<Number> l = al;
 	}
+	
+	public static <T> T get(Class<?> h) {
+		T t = null;
+		return t;
+	}
 }
