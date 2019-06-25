@@ -19,7 +19,7 @@
 	<c:set var="firstStr" value="i love you. i hate you. i like you." scope="page" />
 	<c:set var="secondStr" value="hate" scope="page" />
 	<c:set var="str" value=" hate " scope="page" />
-	<c:set var="nonEscapedStr" value="&<>" scope="page" />
+	<c:set var="nonEscapedStr" value="this value<abc>hello wolrd</abc>" scope="page" />
 	<header>
 		<h2>jstl example</h2>
 		<nav>
@@ -52,7 +52,7 @@
 			<h4>functions</h4>
 			<div>
 				<p>${str}:${fn:trim(str)} ${fn:toUpperCase(str)}</p>
-				<p>${fn:escapeXml(nonEscapedStr)}</p>
+				<p>${nonEscapedStr}</p>
 				<p><c:out value="${nonEscapedStr}" escapeXml="true"/></p>
 			</div>
 		</article>
