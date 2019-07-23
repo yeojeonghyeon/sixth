@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="member">
+	<select id="insertmember">
+		insert into member(M_ID, M_PW, M_NAME, M_NICKNAME, M_CEL, M_EMAIL, M_GRADE, M_J_DATE)
+		values(#{m_id}, #{m_pw}, #{m_name}, #{m_nickName}, #{m_cel}, #{m_email}, 'B1', sysdate)
+	</select>
+	
+</mapper>

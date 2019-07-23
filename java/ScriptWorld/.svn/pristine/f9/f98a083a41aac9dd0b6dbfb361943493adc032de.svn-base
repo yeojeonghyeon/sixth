@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+(function(){
+	var obj = {name:"홍길동", age:15};
+	for(var sdel in obj){
+		console.log(sdel+" "+obj[sdel]);
+	}
+	if ( "name" in obj ) console.log(obj["name"]);
+	
+	if (obj) console.log('true');
+})();
+
+(function(){
+	var x, y, z;
+	var a=b=c=3,d=4;
+	x=(y=5,z=6);
+	console.log(x);
+	console.log(myFunc());
+	function myFunc(){
+//	  var x=0;
+	  return (x+=1, x);
+	}
+})();
+
+(function(){
+	var bizType = 'Personel';
+	switch(bizType){
+		case 'Personel':
+			console.log('Personel');
+		case 'Public':
+			console.log('Public');
+			break;
+		default:
+			console.log('default');
+			break;
+	}
+})();
+// IIFE; 즉시 실행 함수
+// ecmascript5.1
+// var 선언된 변수는 function-scoped 
+(function(){
+	for(var i=0; i<=10; i++){
+		if(i%2!=0) continue;
+		console.log(i);
+	}
+	i=0;
+	while(i<=10){
+		if(i%2!=0)
+		{
+			i++;
+			continue;
+		}
+		console.log(i);
+		i++;
+	}
+	
+	var n=0;
+	i=0;
+	while(i<5){
+		i++;
+		if(i==3) continue;
+		n+=i;
+	}
+	console.log(n);
+})();
+
+(function(){
+	var i=0, j=0;
+   checki:	
+	while (i < 4) {
+		i++;
+		j=0;
+	  checkj:
+	    while (j < 4) {
+	    	j++;
+	    	if ( j == 2 ) continue checki;
+	    	console.log('j '+j);
+	    }
+		console.log('i=>'+i);
+	}
+})();
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

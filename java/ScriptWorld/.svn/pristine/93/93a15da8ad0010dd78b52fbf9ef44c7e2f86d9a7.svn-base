@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+var globalVar = 1;
+
+function foo(){
+	var localVar = 1;
+	function inner(){
+		var localVar = 2;
+	}
+	inner();
+	console.log(globalVar); // 1
+	console.log(localVar); // 1
+}
+
+foo();
+
+function counter(){
+	var count = 0;
+	function increment(){
+		count++;
+	}
+	function showCount(){
+		console.log(count);
+	}
+	return {increment:increment, showCount:showCount};
+}
+
+var tickCounter = counter();
+tickCounter.increment();
+tickCounter.increment();
+tickCounter.increment();
+tickCounter.showCount();
+var timeCounter = counter();
+timeCounter.increment();
+timeCounter.increment();
+timeCounter.increment();
+timeCounter.increment();
+timeCounter.showCount();
+
+var a = {prop:{name:"홍길동",
+			   showName:function(){alert(this.name); return this;}}};
+			   
+a.prop.showName().showName().showName();			   
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

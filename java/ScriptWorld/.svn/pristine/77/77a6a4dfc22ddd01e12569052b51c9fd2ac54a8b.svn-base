@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 1em;
+  text-align: left;
+}
+</style>
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+// DOM 로드 완료 시
+$(function(){
+	$("#submitBtn").on("click", function(){
+		console.log($("input[name=gender]:checked").val());
+		console.dir($("input[name=hobby][type=checkbox][value=sports]:checked").val());
+		console.dir($("input[name=hobby][type=checkbox][value=reading]:checked").val());
+		
+		var resultArr = $("input[name=hobby][type=checkbox]:checked").map((i, e)=>{
+			return e.value;
+		}).get();
+		console.log(resultArr);
+		
+		console.log($("select[name=bornYear]").val());
+// 		console.dir($("#inputForm").serialize());
+	});
+});
+</script>
+</head>
+<body>
+	<form id="inputForm">
+		<div class="grid-container">
+			<div class="grid-item"><span>이름:&nbsp;</span><input type="text" placeholder="이름을 입력하세요"></div>
+			<div class="grid-item">
+				<span>성별:&nbsp;</span>
+				<input type="radio" name="gender" value="female">여성
+				<input type="radio" name="gender" value="male">남성
+			</div>
+			<div class="grid-item">
+				<span>취미:&nbsp;</span>
+				<input type="checkbox" name="hobby" value="sports">스포츠
+				<input type="checkbox" name="hobby" value="reading">독서
+			</div>
+			<div class="grid-item">
+				<span>생년:&nbsp;</span>
+				<select name="bornYear">
+					<option value="">-선 택-</option>				
+					<option value="1999">1999</option>
+					<option value="2001">2001</option>
+					<option value="2002">2002</option>
+					<option value="2003">2003</option>
+				</select>
+			</div>			
+		</div>
+		<input id="submitBtn" type="button" value="전송하기">
+	</form>
+</body>
+</html>

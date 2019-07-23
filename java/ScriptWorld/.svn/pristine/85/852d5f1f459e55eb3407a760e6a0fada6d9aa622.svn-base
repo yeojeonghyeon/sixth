@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+(function() {
+	var x;
+	var z = 0;
+	var y = increment(1);
+	x = y();
+	console.log(x);
+	x = y();
+	console.log(x);
+
+	function increment(base) {
+		base = base || 0;
+		z++;
+		return function() {
+			return base++;
+		}
+	}
+})();
+
+(function() {
+	function foo(base) {
+		var resultArr = [];
+		for (var i = 0; i < base; i++) {
+			var f = function() { // [[scope]] <= active execution context's L.E <= 지금 실행되는 foo함수
+				return i;
+			};
+			resultArr.push(f);
+		}
+		return resultArr;
+	}
+	var arr = foo(10);
+	
+// 	for(var i=0; i<arr.lenght: i++){
+// 		console.log(arr[i]());
+// 	}
+// 	arr.forEach(function(ele){
+// 		console.log(ele());
+// 	});
+	//es6 버젼
+	for(var f of arr){
+		console.log(f());
+	}
+})();
+// 단, iife 함수를 사용하세요.
+// closure
+(function() {
+	function foo(base) {
+		var resultArr = [];
+		for (var i = 0; i < base; i++) {
+			var f = (function(i){
+				return function(){
+					return i;
+				};
+			})(i);
+			resultArr.push(f);
+		}
+		return resultArr;
+	}
+	var arr = foo(10);
+
+	for(var f of arr){
+		console.log(f());
+	}
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

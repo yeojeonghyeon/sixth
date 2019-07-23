@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+div{
+}
+div#header, div#content, div#footer{
+	background-color: #ede02a;
+	text-align: center;
+}
+div#content div.item{
+	background-color: #871d85;
+	display: inline-block;
+	width: 40%;
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+	counter("result", "increment", "decrement");
+	counter("result2", "increment2", "decrement2");
+});
+
+// 클로져(closure)
+// 내부 함수가 외부 함수의 변수를 사용하고, 내부함수의 레퍼런스가 살아 있을 때,
+// 외부함수의 식별자(변수,함수)정보가 사라지지 않는 현상
+function counter(resultId, incBtnId, decBtnId){
+	var result = document.getElementById(resultId);
+	var count = 0;
+	function increment(){
+		count++;
+		result.value = count;
+	}
+	function decrement(){
+		count--;
+		result.value = count;
+	}
+	document.getElementById(incBtnId).addEventListener("click", increment);
+	document.getElementById(decBtnId).addEventListener("click", decrement);	
+}
+</script>
+</head>
+<body>
+	<div>
+		<div id="header">
+		</div>
+		<div id="content">
+			<div id=counterDiv1 class="item">
+				<input type="text" id="result">
+				<br>
+				<input type=button id="increment" value="+">
+				<input type=button id="decrement" value="-">
+			</div>
+			<div id=counterDiv2 class="item">
+				<input type="text" id="result2">
+				<br>
+				<input type=button id="increment2" value="+">
+				<input type=button id="decrement2" value="-">			
+			</div>
+		</div>
+		<div id="footer"></div>
+	</div>	
+</body>
+</html>

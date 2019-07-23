@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+	var imgSlider1 = slider("slideImg", "preBtn", "nextBtn", 0);
+	var imgSlider2 = slider("slideImg1", "preBtn1", "nextBtn1", 0);
+	imgSlider2.changeImgs(["img4.jpg","img5.jpg","img6.jpg"]);
+});
+
+(function(global){
+	function slider(imgId, preBtnId, nextBtnId, defaultIndex){
+		// defaultIndex가 falsy value일 때 0을 반환
+		defaultIndex = defaultIndex||0;
+		var curIndex = defaultIndex;
+		var relativePath = "../img/";
+		var imgArr = ["img1.jpg","img2.jpg","img3.jpg"];
+		var imgObj = document.getElementById(imgId);
+		
+		imgObj.src = relativePath+imgArr[defaultIndex];
+		
+		document.getElementById(preBtnId).addEventListener("click", function(){
+			if ( curIndex <= 0 ) alert('이미지 처음입니다.');
+			else imgObj.src = relativePath+imgArr[--curIndex];
+		});
+		document.getElementById(nextBtnId).addEventListener("click", function(){
+			if ( curIndex == imgArr.length-1 ) alert('이미지 끝입니다.');
+			else imgObj.src = relativePath+imgArr[++curIndex];
+		});
+		
+		return {changeImgs:function(pImgArr){
+			imgArr = pImgArr;
+		}}; 
+	}
+	global.slider = slider;
+})(window);
+</script>
+</head>
+<body>
+	<div>
+		<img id="slideImg" src="">
+		<br>
+		<input type="button" id="preBtn" value="&lt;">
+		<input type="button" id="nextBtn" value="&gt;">
+	</div>
+	<div>
+		<img id="slideImg1" src="">
+		<br>
+		<input type="button" id="preBtn1" value="&lt;">
+		<input type="button" id="nextBtn1" value="&gt;">
+	</div>
+</body>
+</html>

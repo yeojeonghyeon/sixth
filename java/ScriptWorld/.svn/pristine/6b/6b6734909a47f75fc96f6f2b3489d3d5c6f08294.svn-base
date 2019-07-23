@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+(function(){
+	// 생성자 함수로 사용하기 위해서 대문자로 썼음.
+	// Animal.__proto__([[prototype]]) <= Function.prototype
+	// Function을 통해서 만들어진 함수 객체 Animal
+	// Animal.prototype = {constructor: Animal, __proto__: Object.prototype}
+	function Animal(name, noOfLegs){
+		// 객체 하나 생성되고 this로 바인딩
+		this.name = name;
+		this.noOfLegs = noOfLegs;
+		this.showInfo = function(){
+			console.log("이름은 "+this.name);
+			console.log("다리수는 "+this.noOfLegs);
+		};
+		this.showVersion = function(){
+			console.log(this.version);
+		};
+	}
+	// Animal.prototype = {constructor: Animal, __proto__: Object.prototype, version: 1.0}	
+	Animal.prototype.version = 1.0;
+	//console.dir(Animal);
+	// __proto__ <= Animal.prototype
+	// this.name, this.noOfLegs, this.showInfo, this.showVersion
+	var dog = new Animal("개", 4);
+	// __proto__ <= Animal.prototype
+	// this.name, this.noOfLegs, this.showInfo, this.showVersion	
+	var cat = new Animal("고양이", 4);
+	// 명시적으로 this가 바인딩
+	dog.showInfo();
+	cat.showInfo();
+	
+	dog.showVersion();
+	cat.showVersion();
+	
+	dog.version = 2.0;
+	// this.name, this.noOfLegs, this.showInfo, this.showVersion, this.version	
+	dog.showVersion(); // 2
+	// this.name, this.noOfLegs, this.showInfo, this.showVersion
+	cat.showVersion(); // 1
+})();
+
+(function(){
+	// new Object();
+	var p1 = {describe: function(){
+		console.log(this.name, this.id, this.age);
+	}};
+	// 객체에 속성을 동적으로 생성
+	p1.id = 'p1';
+	p1.age = 15;
+	p1.describe();
+	// p2's __proto__([[prototype]], prototype link) <= p1
+	var p2 = Object.create(p1, {name:{writable:true, value:"철수"}, age:{writable:true, value:25}});
+	p2.describe();
+	var p3 = Object.create(p1, {name:{writable:true, value:"영희"}, age:{writable:true, value:31}});
+	p3.describe();
+	console.log(p2.hasOwnProperty('name'));
+	console.log(p2.hasOwnProperty('id'));
+	console.log(p2.hasOwnProperty('age'));
+	
+	var f = p1.describe;
+	// this <= p2
+	f.call(p2);
+	// this <= p3
+	f.apply(p3);
+	
+	var bindFunc = p1.describe.bind(p2);
+	
+	console.dir(p1.describe.toString());
+	console.dir(bindFunc.toString());
+	
+	bindFunc();
+	
+	var obj = {
+			id:"12345",
+			age:15,
+			get bornDt(){
+				return this.age; 
+			},
+			set setBornDt(age){
+				this.age = age;
+			}
+	};
+	console.dir(obj);
+	obj.setBornDt = 20;
+	console.log(obj.bornDt);
+	
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

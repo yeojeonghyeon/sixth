@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../include/templates.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body{
+	margin:200px;	
+}
+</style>
+</head>
+<body>
+	<h2>게시글 보기</h2>
+	<form name="boardForm" mehthod="post">
+		<div>
+			작성일자:<fmt:formatDate value="${boarddto.b_REGDATE}" pattern="yyyy-MMMM-dd a HH:mm:ss" />
+		</div>
+		<div>
+			조회수: ${boarddto.b_VIEWCNT}
+		</div>
+		<div>
+			제목 <input name="B_TITLE" id="title" size="80" value="${boarddto.b_TITLE}" >
+		</div>
+		<div>
+			내용<textarea name="B_CONTENT" id="content" rows="10" cols="80">${boarddto.b_CONTENT}</textarea>
+		</div>
+		<div>
+			이름<input name="B_WRITER" id="wirter" value="${boarddto.b_WRITER}">
+		</div>
+	</form>
+</body>
+</html>
