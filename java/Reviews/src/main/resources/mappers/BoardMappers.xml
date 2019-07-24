@@ -4,7 +4,7 @@
 <mapper namespace="board">
 	<select id = "insert">
 		INSERT INTO R_BOARD(B_NUMBER, B_TITLE, B_CONTENT, B_WRITER, B_REGDATE, B_VIEWCNT) 
-		VALUES ((SELECT NVL(MAX(B_NUMBER)+1, 1)FROM R_BOARD), #{B_TITLE}, #{B_CONTENT}, #{B_WRITER}, sysdate, '0')
+		VALUES ((SELECT NVL(MAX(B_NUMBER)+1, 1)FROM R_BOARD), #{B_TITLE}, #{B_CONTENT}, #{B_WRITER}, SYSDATE, '0')
 	</select>
 	<select id = "listAll" resultType="boarddto">
 		SELECT * FROM R_BOARD ORDER BY B_NUMBER, B_REGDATE

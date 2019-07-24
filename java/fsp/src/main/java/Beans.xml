@@ -3,7 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="helloWorld" class="com.scci.edu.fsp.HelloWorld">
+	<bean id="helloWorld" class="com.scci.edu.fsp.HelloWorld" init-method="init" destroy-method="destroy">
 		<property name="message" value="Hello World!"></property>
-	</bean> 
+	</bean>
+	
+	<bean id="helloWorldPrototype" class="com.scci.edu.fsp.HelloWorld" scope="prototype"
+		init-method="init" destroy-method="destroy">
+	</bean>
+	
+	<bean class="com.scci.edu.fsp.InitHelloWorld" />
 </beans>
