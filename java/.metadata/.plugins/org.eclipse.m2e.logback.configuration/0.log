@@ -2386,3 +2386,175 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact com.oracle:oj
 2019-07-24 17:34:13,440 [Worker-441: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
 2019-07-24 17:34:33,904 [Worker-436: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-07-24 17:34:33,905 [Worker-436: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-24 17:34:33,906 [Worker-436: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-24 17:34:33,906 [Worker-436: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:10:52,437 [Worker-736: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:10:52,452 [Worker-736: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:10:52,458 [Worker-736: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:10:52,458 [Worker-736: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:11:21,654 [Worker-738: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:11:21,655 [Worker-738: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:11:21,656 [Worker-738: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:11:21,656 [Worker-738: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:16:05,263 [Worker-741: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:16:05,263 [Worker-741: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:16:05,266 [Worker-741: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:16:05,266 [Worker-741: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:18:11,210 [Worker-741: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:18:11,210 [Worker-741: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:18:11,212 [Worker-741: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:18:11,212 [Worker-741: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:20:47,822 [Worker-743: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:20:47,822 [Worker-743: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:20:47,825 [Worker-743: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:20:47,825 [Worker-743: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:22:11,438 [Worker-741: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:22:11,439 [Worker-741: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:22:11,441 [Worker-741: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:22:11,441 [Worker-741: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:23:24,215 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:23:24,215 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:23:24,217 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:23:24,218 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:25:07,276 [Worker-748: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:25:07,276 [Worker-748: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:25:07,286 [Worker-748: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:25:07,287 [Worker-748: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:25:42,947 [Worker-745: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:25:42,948 [Worker-745: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:25:42,950 [Worker-745: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:25:42,950 [Worker-745: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:27:26,139 [Worker-743: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:27:26,140 [Worker-743: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:27:26,142 [Worker-743: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:27:26,143 [Worker-743: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:28:25,499 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:28:25,500 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:28:25,501 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:28:25,501 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:30:04,462 [Worker-743: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:30:04,463 [Worker-743: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:30:04,466 [Worker-743: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:30:04,467 [Worker-743: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:32:02,153 [Worker-748: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:32:02,154 [Worker-748: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:32:02,156 [Worker-748: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:32:02,157 [Worker-748: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:35:47,412 [Worker-755: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:35:47,413 [Worker-755: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:35:47,414 [Worker-755: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:35:47,415 [Worker-755: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:37:35,537 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:37:35,538 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:37:35,540 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:37:35,540 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:38:43,148 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:38:43,149 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:38:43,152 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:38:43,152 [Worker-747: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:39:10,558 [Worker-755: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:39:10,559 [Worker-755: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:39:10,561 [Worker-755: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:39:10,562 [Worker-755: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:43:41,306 [Worker-757: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:43:41,307 [Worker-757: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:43:41,308 [Worker-757: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:43:41,308 [Worker-757: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:47:19,195 [Worker-761: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:47:19,196 [Worker-761: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:47:19,199 [Worker-761: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:47:19,200 [Worker-761: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:47:25,554 [Worker-761: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:47:25,554 [Worker-761: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:47:25,556 [Worker-761: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:47:25,556 [Worker-761: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:47:56,892 [Worker-759: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:47:56,892 [Worker-759: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:47:56,894 [Worker-759: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:47:56,894 [Worker-759: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:48:01,263 [Worker-762: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:48:01,264 [Worker-762: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:48:01,265 [Worker-762: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:48:01,265 [Worker-762: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:49:56,749 [Worker-757: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:49:56,750 [Worker-757: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:49:56,751 [Worker-757: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:49:56,752 [Worker-757: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:53:05,182 [Worker-757: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:53:05,183 [Worker-757: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:53:05,184 [Worker-757: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:53:05,185 [Worker-757: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:53:21,343 [Worker-765: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:53:21,344 [Worker-765: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:53:21,346 [Worker-765: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:53:21,347 [Worker-765: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:56:33,003 [Worker-767: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:56:33,003 [Worker-767: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:56:33,005 [Worker-767: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:56:33,006 [Worker-767: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 15:57:36,535 [Worker-765: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:57:36,536 [Worker-765: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 15:57:36,537 [Worker-765: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 15:57:36,537 [Worker-765: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:08:13,284 [Worker-770: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:08:13,284 [Worker-770: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:08:13,285 [Worker-770: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:08:13,285 [Worker-770: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:08:24,619 [Worker-775: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:08:24,619 [Worker-775: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:08:24,621 [Worker-775: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:08:24,621 [Worker-775: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:18:53,549 [Worker-780: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:18:53,550 [Worker-780: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:18:53,550 [Worker-780: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:18:53,551 [Worker-780: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:22:09,417 [Worker-783: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:22:09,418 [Worker-783: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:22:09,419 [Worker-783: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:22:09,420 [Worker-783: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:22:35,324 [Worker-785: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:22:35,325 [Worker-785: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:22:35,326 [Worker-785: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:22:35,327 [Worker-785: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:23:43,608 [Worker-784: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:23:43,608 [Worker-784: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:23:43,610 [Worker-784: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:23:43,610 [Worker-784: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:23:47,570 [Worker-784: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:23:47,571 [Worker-784: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:23:47,572 [Worker-784: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:23:47,573 [Worker-784: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:24:58,121 [Worker-776: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:24:58,122 [Worker-776: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:24:58,123 [Worker-776: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:24:58,123 [Worker-776: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:26:37,416 [Worker-783: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:26:37,416 [Worker-783: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:26:37,418 [Worker-783: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:26:37,418 [Worker-783: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:28:45,834 [Worker-777: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:28:45,834 [Worker-777: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:28:45,835 [Worker-777: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:28:45,836 [Worker-777: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:31:29,470 [Worker-784: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:31:29,471 [Worker-784: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:31:29,472 [Worker-784: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:31:29,473 [Worker-784: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:36:20,385 [Worker-786: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:36:20,385 [Worker-786: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:36:20,388 [Worker-786: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:36:20,388 [Worker-786: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:36:38,130 [Worker-787: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:36:38,130 [Worker-787: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:36:38,131 [Worker-787: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:36:38,132 [Worker-787: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:39:19,659 [Worker-786: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:39:19,660 [Worker-786: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:39:19,661 [Worker-786: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:39:19,661 [Worker-786: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:40:15,519 [Worker-789: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:40:15,519 [Worker-789: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources
+2019-07-25 16:40:15,522 [Worker-789: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:40:15,523 [Worker-789: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\test\resources
+2019-07-25 16:40:23,653 [Worker-792: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-07-25 16:40:23,653 [Worker-792: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\dev\repository\sixth\java\fsp\src\main\resources

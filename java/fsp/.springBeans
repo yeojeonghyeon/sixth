@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/java/Beans.xml</config>
 		<config>src/main/java/BeansDi.xml</config>
+		<config>src/main/java/BeanAutowired.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
