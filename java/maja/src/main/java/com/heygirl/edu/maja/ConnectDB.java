@@ -13,8 +13,8 @@ class ConnectDB{
 	@Autowired
 	SqlSession sqlSession;
 
-	public List<Map> retrieve() {
+	public List<Map<String, String>> retrieve() {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("common.listAll", new HashMap<String,String>());
+		return sqlSession.selectList("common.listBook", new HashMap<String,String>());
 	}
 }

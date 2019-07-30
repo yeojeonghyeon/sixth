@@ -10,6 +10,7 @@
 		<config>src/main/java/Beans.xml</config>
 		<config>src/main/java/BeansDi.xml</config>
 		<config>src/main/java/BeanAutowired.xml</config>
+		<config>src/main/resources/spring-context.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
