@@ -40,6 +40,25 @@
   		<artifactId>spring-test</artifactId>
   		<version>${spring-framework.version}</version>
   	</dependency>
+  	
+  	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aop</artifactId>
+	    <version>${spring-framework.version}</version>
+	</dependency>
+<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+	<dependency>
+	    <groupId>org.aspectj</groupId>
+	    <artifactId>aspectjrt</artifactId>
+	    <version>1.8.0</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.aspectj</groupId>
+	    <artifactId>aspectjweaver</artifactId>
+	    <version>1.8.0</version>
+	</dependency>	
+	
 	<!-- spring dependency end -->
   </dependencies>
 </project>
