@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+$(function(){
+// 	document.getElementById("showBtn").addEventListener("click", function(){
+// 	});
+	var showBtn = $('#showBtn');
+	showBtn.on("click", function(){
+		alert('hello jQuery!');
+	});
+// 	console.dir(showBtn);
+	
+// 	$("div#contents li").on("click", function(){
+// 		alert(this.innerText);
+// 	});
+	
+	$("div#contents ul").on("click", function(e){
+		alert(e.target.innerText);
+	});
+});
+</script>
+</head>
+<body>
+	<div>
+		<input id="showBtn" type="button" value="show message">
+	</div>
+	<div id="contents">
+		<strong>음식</strong>
+		<ul>
+			<li>김치찌개</li>
+			<li>된장찌개</li>
+			<li>순두부찌개</li>
+		</ul>
+	</div>
+</body>
+</html>

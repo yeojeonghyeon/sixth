@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="person" class="com.scci.edu.bean.inheritance.Person">
+		<property name="name" value="홍길동" />
+		<property name="nationality" value="한국" />
+	</bean>
+	
+	<bean id="student" class="com.scci.edu.bean.inheritance.Student" parent="person">
+		<property name="name" value="임꺽정" />	
+	</bean>
+</beans>

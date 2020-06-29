@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+ul#menuList > li:nth-child(odd){
+	color: #7fe8e2;
+}
+ul#menuList > li:nth-child(even){
+	color: #479da5;
+}
+ul#menuList > li.menuItem{
+	margin: 15px;
+	float:left;
+}
+ul#menuList::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% 60% 10%;
+  background-image: linear-gradient(to bottom right, #95a1b3, #1b6953, #808217);
+  padding: 5px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 0.2px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  font-size: 1em;
+  text-align: left;
+}
+@media screen and (max-width: 600px) {
+	.grid-container {
+	  display: grid;
+	  grid-template-columns: auto auto auto 100px;
+	  background-image: linear-gradient(to bottom right, #95a1b3, #1b6953, #808217);
+	  padding: 5px;
+	}
+}
+</style>
+<script>
+
+var ChainedSelect = function (pSelectIds, jSonData, isOrdered){
+	if (!(this instanceof ChainedSelect)){
+		return new ChainedSelect(pSelectIds);
+	}
+	isOrdered = isOrdered||false;
+	var selectIdArr = pSelectIds;
+	var jsonObj = jSonData||{					
+			"data":[
+			        { "id" : "1000", "pid" : "", "name" : "전라남도"},
+			        { "id" : "2000", "pid" : "", "name" : "전라북도"},
+					{ "id" : "1001", "pid" : "1000", "name" : "여수시"},
+			        { "id" : "1002", "pid" : "1000", "name" : "순천시"},
+			        { "id" : "2001", "pid" : "2000", "name" : "정읍시"},
+			        { "id" : "2101", "pid" : "2001", "name" : "삼례"},			        
+			        { "id" : "2002", "pid" : "2000", "name" : "전주시"},
+					{ "id" : "1101", "pid" : "1001", "name" : "소호동"},			        
+					{ "id" : "11011", "pid" : "1101", "name" : "소호동 1길"},					
+					{ "id" : "1102", "pid" : "1001", "name" : "종화동"},					
+					{ "id" : "1201", "pid" : "1002", "name" : "조례동"},			        
+					{ "id" : "1202", "pid" : "1002", "name" : "연향동"}					
+					]
+	};
+	this.setJSonData = function(data){
+		jsonObj = data;
+	};
+	this.init = function(){
+		var menuArr = jsonObj['data'], rootNodes = findChildNodes(''), firstSelectObj = document.getElementById(selectIdArr[0]);
+		var selectObj = null;
+		// 모든 select 박스 -선택- 추가
+		for(var i=0; i<selectIdArr.length; i++){
+			selectObj = document.getElementById(selectIdArr[i]);
+			setFirstOptionWithWords(selectObj);			
+		}
+		// root nodes로 첫번째 select 요소 구성
+		setSelectWithNodes(firstSelectObj, rootNodes);
+		
+		for(i=0; i<selectIdArr.length-1; i++){
+			selectObj = document.getElementById(selectIdArr[i]);
+			// case 1 onchange 이벤트 프로퍼티를 이용할 경우는 아래와 같이 iffe 형태로 작성 해야 하고,
+// 			selectObj.onchange = function(j){
+// 	            // j 파라미터는 호출시 즉시 넘겨받은(IIFE) i의 값이 됩니다.
+// 	            return function(){
+// 	                // for문이 순환할때마다 현재 i의 값을 넘겨주고, 배열에 저장합니다.
+// 	                return changeHandler(document.getElementById(selectIdArr[j]));	                
+// 	            }
+// 	        }(i); // i 변수를 파라미터로 즉시 함수를 호출합니다.
+			// case 2 addEventListener를 이용할 경우에는 this는 dom element가 된다.
+			selectObj.addEventListener("change",function(){
+				var pThis = this, menuIndex = findMenuIndex(pThis.id)
+					, currentSelectObj = document.getElementById(selectIdArr[menuIndex])
+				    , nextSelectObj = document.getElementById(selectIdArr[menuIndex+1]);		
+				var id = currentSelectObj.value;
+				
+				if ( currentSelectObj.value == "" ){
+					clearChildSelect(pThis.id);
+					return;
+				}
+				var childNodes = findChildNodes(id);
+				// next select는 -선택-, 찾아진 요소로 채워지고
+				setSelectWithNodes(nextSelectObj, childNodes);
+				// 2단계 이상 차이나는 select는 요소 지우고 -선택-만으로 설정해 줌.
+				clearChildSelect(nextSelectObj.id);				
+			});
+		}
+	}
+	// -선택으로 초기화-
+	function setFirstOptionWithWords(pObj){
+		var opt = document.createElement('option');
+		opt.value = "";
+		opt.text = "-선택-"
+		pObj.add(opt);
+	}
+	
+	// select 태그 요소를 클리어하고 -선택-, nodes로 구성
+	function setSelectWithNodes(selectObj, nodes){
+		selectObj.options.length = 0;
+ 		setFirstOptionWithWords(selectObj);
+		for(var i=0; i<nodes.length; i++){
+			var opt = document.createElement('option');
+			opt.text = nodes[i]['name'];
+			opt.value = nodes[i]['id'];
+			selectObj.add(opt);			
+		}		
+	}
+	
+	// pId로 select array 인덱스 찾기
+	function findMenuIndex(pId){
+		for(var i=0; i<selectIdArr.length; i++){
+			if ( pId == selectIdArr[i] ){
+				return i;
+			}
+		}
+	}
+	// id를 던져주면 하위 메뉴를 찾아서 리턴 arr
+	function findChildNodes(pId){
+		var menuArr = jsonObj['data'];
+		var foundNodes = [];
+		for(var i=0; i<menuArr.length; i++){
+			if ( pId == menuArr[i]['pid'] ){
+				foundNodes.push(menuArr[i]);
+			}
+		}
+		if ( isOrdered ){
+			foundNodes.sort(function(a,b){return a.order-b.order;});
+		}
+		return foundNodes;
+	}
+	
+	//-선택-으로 클릭 했을 경우 자신의 하위 select 초기화 
+	function clearChildSelect(pId){
+		var curSelIdx = findMenuIndex(pId);
+		for(var i=curSelIdx+1; i<selectIdArr.length; i++){
+			var selObj = document.getElementById(selectIdArr[i]);
+			selObj.options.length = 1;
+		}
+	}
+}
+
+window.onload = function (){
+// 
+	var moduleObj = new ChainedSelect(['first','second','third','forth'], null, true);
+ 	moduleObj.init();
+	
+// 	moduleObj.setJSonData({"data":[{ "id" : "1000", "pid" : "", "name" : "전라남도", order:2},
+// 			         { "id" : "2000", "pid" : "", "name" : "전라북도", order:1},
+// 					 { "id" : "1001", "pid" : "1000", "name" : "여수시", order:1},
+// 			         { "id" : "1002", "pid" : "1000", "name" : "순천시", order:2},
+// 			         { "id" : "2001", "pid" : "2000", "name" : "정읍시", order:1}]});
+//  	moduleObj.init();					 
+}
+	
+</script>
+</head>
+<body>
+	<header>
+		<h2>chained select</h2>
+	</header>
+	<nav>
+		<h4>다루는 내용들</h4>
+		<ul id="menuList">
+			<li class="menuItem">DOM Traversing</li>
+			<li class="menuItem">Event</li>
+			<li class="menuItem">DOM Manipulation</li>
+			<li class="menuItem">Ajax</li>
+		</ul>
+	</nav>
+	<section id="searchSection">
+		<div class="grid-container">
+			<div class="grid-item">
+				<span>제목:&nbsp;</span>
+				<input type="text" style="width:70%;" placeholder="검색할 내용을 입력하세요">
+			</div>
+			<div class="grid-item">
+				<select id="first"></select>
+				<select id="second"></select>
+				<select id="third"></select>
+				<select id="forth"></select>
+			</div>
+			<div class="grid-item">
+				<input type="button" value="검색">
+			</div>
+		</div>
+	</section>
+	<section id="contentSection">
+		<article>
+		</article>
+	</section>
+	<footer></footer>
+</body>
+</html>

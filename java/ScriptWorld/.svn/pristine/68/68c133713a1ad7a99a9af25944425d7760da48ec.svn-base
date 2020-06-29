@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+$(function(){
+	var firstObj = document.getElementById("first");
+	var secondObj = document.getElementById("second");
+	$("#swapBtn").on("click", function(){
+		var tempText = firstObj.innerText;
+		firstObj.innerText = secondObj.innerText;
+		secondObj.innerText = tempText;
+	});
+});
+</script>
+</head>
+<body>
+	<div>
+		<span id="first">first</span><span id="second">second</span>
+		<input type="button" id="swapBtn" value="Swap Text">
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+(function(){
+	function outer(){
+		var x = 0;
+		function inner(){
+			return ++x;
+		}
+		return inner;
+	}
+	var counter1 = outer();
+	var counter2 = outer();
+	counter1();
+	counter1();
+// 	console.log(counter1());
+	
+	counter2();
+	counter2();
+// 	console.log(counter2());
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

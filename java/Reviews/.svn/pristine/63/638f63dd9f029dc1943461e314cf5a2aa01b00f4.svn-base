@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases> <!-- 긴 클래스이름을 줄이는 태그 -->
+			<typeAlias type="com.scggi.reviews.model.dto.MemberDTO" alias="memberdto"/>
+			<typeAlias type="com.scggi.reviews.model.dto.BoardDTO" alias="boarddto" />
+	</typeAliases>
+
+</configuration>
+

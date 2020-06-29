@@ -1,3 +1,7 @@
 java/.metadata/
 **/*.class
 **/*/bin/
+**/*.svn
+**/*.log
+**/*.bak
+.svn/

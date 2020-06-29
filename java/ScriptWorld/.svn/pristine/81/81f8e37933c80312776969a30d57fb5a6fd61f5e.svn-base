@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+ul#foodItems > li.menuItem, ul#fancyItems > li.menuItem{
+	color: #7c6f63;
+	text-shadow: 2px 2px 2px gray;
+}
+</style>
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+$.fn.greenify = function(){
+	return this.each(function(i, e){
+		e.classList.add('menuItem');
+	});
+};
+
+$(function(){
+	var that = this;
+	$("td:eq(1)").css({color:'yellow'});
+	
+	$("table#thirdTbl td:lt(4)").css({color:'red'});
+
+	$("table#thirdTbl td").eq(5).css({color:'green'});
+	
+	$("#menuItems > li:not(.active)").css({color:'orange'});
+
+	$("#menuItems > li").not(":first-child").css({color:'purple'});
+	
+// 	$("ul#fancyItems > li").not(function(i, e){
+// 		return e.classList.contains('active');
+// 	}).css({color:'blue'});
+
+	$("ul#fancyItems > li").not((i, e)=>{
+		return e.classList.contains('active');
+	}).css({color:'blue'}).greenify();
+	
+	$("ul#foodItems > li").greenify().eq(5).css({color:'red'});
+	
+	$("ul#fruitItems > li").attr({class:'fruitItem'});
+	// get > Array
+	console.dir($("ul#fruitItems > li").map(function(i, e){
+		return e.className;
+	}).get());
+	
+	console.log($("#helloText").val());
+	console.log($("#checkBox").val());
+});
+</script>
+</head>
+<body>
+	<div>
+		<table>
+			<thead>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>2</td>
+				</tr>
+			</tbody>
+		</table>
+		<table>
+			<thead>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>2</td>
+				</tr>
+			</tbody>
+		</table>
+		<table id="thirdTbl">
+			<thead>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div>
+		<h3>음식</h3>
+		<ul id="menuItems">
+			<li class="active menuItem">된장찌개</li>
+			<li class="menuItem">냉면</li>
+			<li class="menuItem">동태찌개</li>
+			<li class="menuItem">짜장면</li>
+		</ul>
+		<ul id="fancyItems">
+			<li class="active">볼펜</li>
+			<li class="">연필</li>
+			<li class="">지우개</li>
+			<li class="">가위</li>
+			<li class="">엽서</li>
+		</ul>
+		<ul id="foodItems">
+			<li>복숭아</li>
+			<li>살구</li>
+			<li>포도</li>
+			<li>망고</li>
+			<li>오렌지</li>
+			<li>탱자</li>
+		</ul>	
+		<ul id="fruitItems">
+			<li>복숭아</li>
+			<li>살구</li>
+			<li>포도</li>
+			<li>망고</li>
+			<li>오렌지</li>
+			<li>탱자</li>
+		</ul>
+		<input id="helloText" type="text" value="hello world">
+		<input id="checkBox" type="checkbox" value="Car">
+	</div>
+</body>
+</html>

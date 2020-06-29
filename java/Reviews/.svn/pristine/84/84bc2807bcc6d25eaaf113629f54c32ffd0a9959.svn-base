@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+	<select id = "insert">
+		INSERT INTO R_BOARD(B_NUMBER, B_TITLE, B_CONTENT, B_WRITER, B_REGDATE, B_VIEWCNT) 
+		VALUES ((SELECT NVL(MAX(B_NUMBER)+1, 1)FROM R_BOARD), #{B_TITLE}, #{B_CONTENT}, #{B_WRITER}, SYSDATE, '0')
+	</select>
+	<select id = "listAll" resultType="boarddto">
+		SELECT * FROM R_BOARD ORDER BY B_NUMBER, B_REGDATE
+	</select>
+	<select id = "boardView" resultType="boarddto">
+		SELECT * FROM R_BOARD WHERE B_NUMBER = #{B_NUMBER}
+	</select>
+	<select id = "increaseViewcnt">
+		UPDATE R_BOARD SET B_VIEWCNT = B_VIEWCNT + 1 WHERE B_NUMBER = #{B_NUMBER}
+	</select>
+	<select id = "updateArticle">
+		UPDATE R_BOARD SET B_TITLE = #{B_TITLE}, B_CONTENT = #{B_CONTENT}, B_WRITER = #{B_WRITER} WHERE B_NUMBER = #{B_NUMBER}
+	</select>
+	<select id = "deleteArticle">
+		DELETE FROM R_BOARD WHERE B_NUMBER = #{B_NUMBER}
+	</select>
+	<select id = "selectBoardList" parameterType="HashMap" resultType="HashMap">
+        SELECT B.RNUM, B.*
+		FROM (  SELECT ROWNUM RNUM, A.*
+       			FROM ( SELECT B_NUMBER, B_TITLE, B_CONTENT, B_WRITER, B_REGDATE, B_VIEWCNT
+                       FROM R_BOARD
+                       ORDER BY B_NUMBER DESC ) A ) B
+		WHERE B.RNUM <![CDATA[>=]]> #{START} AND  B.RNUM <![CDATA[<=]]> #{END}
+	</select>
+	<select id ="boardListGetCount" resultType="int">
+		SELECT COUNT(B_NUMBER) FROM R_BOARD
+	</select>
+</mapper>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+(function(){
+	// 함수 선언식, 선언식 함수
+	function Person(name, age){
+		var that = this;
+		this.id = name+age;
+		this.subject = {kor:0, eng:0, math:0};
+		this.avg = 0;
+		// 함수 표현식, 표현식 함수
+		this.average = function(){
+			this.avg = (this.subject.kor+this.subject.eng+this.subject.math)/3;
+		};
+		this.showInfo = function(){
+			console.log(name, age, this.id);
+			console.log(this.avg);
+		};
+	}
+	Person.prototype.showAvg = function(){
+		console.log(this.avg);
+	};
+	var p1 = new Person('smith', 15);
+	var p2 = new Person('james', 20);
+	
+	p1.subject = {kor:100, eng:90, math: 60};
+	p2.subject = {kor:90, eng:75, math: 99};
+	
+	p1.average();
+	p2.average();
+	
+	p1.showInfo();
+	p2.showInfo();
+	
+	p1.showAvg();
+	p2.showAvg();
+	
+	console.dir(p1);
+	console.dir(p2);
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

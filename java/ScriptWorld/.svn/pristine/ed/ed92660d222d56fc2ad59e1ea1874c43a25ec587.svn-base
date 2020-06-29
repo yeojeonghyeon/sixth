@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+(function(){
+	// function scoped
+	varVar = 1; // o
+	var varVar;
+	
+// 	letVar = 1; // x
+
+	// block scoped
+	let letVar;
+	letVar = 1; // o
+	// 재할당
+	const constVar = 1;
+})();
+
+(function(){
+	var funcArr = [];
+	for(var i=0; i<10; i++){
+		funcArr[i] = (function(j){
+			return function(){
+				return j;
+			};
+		})(i);
+	}
+	console.log(funcArr[3]());
+	console.log(funcArr[4]());
+})();
+
+(function(){
+	var funcArr = [];
+	for(let i=0,j=0; i<10; i++){
+		funcArr[i] = function(){
+			return i;
+		};
+	}
+	console.log(funcArr[3]());
+	console.log(funcArr[4]());
+})();
+
+(function(){
+	var userName = "smith";
+	var message = "hello "+userName+"!!!";
+	
+	var msg = `hello ${userName}!!!`;
+	
+	console.log(message);
+	console.log(msg);
+})();
+
+(function(){
+	// 함수 선언식
+	function pow(x){
+		return x*x;
+	}
+	// lambda
+	const f = x => x*x;
+	
+	console.log(pow(10));
+	console.log(f(10));
+	
+	var seqArr = [10, 20, 30, 40, 100, 150, 110, 240];
+	var filteredArr = seqArr.filter(x => x%2==0);
+	console.log(filteredArr);
+	var filtered2Arr = seqArr.filter(x => x%3==0);
+	console.log(filtered2Arr);
+	
+	var filtered3Arr = seqArr.filter(function(x){
+		return x%4==0;
+	});
+	
+	console.log(filtered3Arr);
+})();
+
+(function(){
+	var foodArr = ["soup", "spagetti", "omulet", "coffee", "juice"];
+	var capArr = foodArr.map(x => {
+		console.dir(this);
+		return x.toUpperCase();
+		});
+	console.dir(capArr);
+}).bind(new Object())();
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<bean id="spellChecker" class="com.scci.edu.di.SpellChecker" />
+	
+	<bean id="textEditor" class="com.scci.edu.di.TextEditor">
+		<constructor-arg ref="spellChecker" />
+	</bean>	
+	
+	<bean id="textEditorSetter" class="com.scci.edu.di.TextEditor">
+		<property name="spellChecker" ref="spellChecker"></property>
+	</bean>	
+	
+	<bean id="textEditorInner" class="com.scci.edu.di.TextEditor">
+		<property name="spellChecker">
+			<bean id="spellCheckerInner" class="com.scci.edu.di.SpellChecker" />
+		</property>
+	</bean>	
+	
+	<bean id = "javaCollection" class = "com.scci.edu.di.JavaCollection">
+      <!-- results in a setAddressList(java.util.List) call -->
+      <property name = "addressList">
+         <list>
+            <value>INDIA</value>
+            <value>Pakistan</value>
+            <value>USA</value>
+            <value>USA</value>
+         </list>
+      </property>
+
+      <!-- results in a setAddressSet(java.util.Set) call -->
+      <property name = "addressSet">
+         <set>
+            <value>INDIA</value>
+            <value>Pakistan</value>
+            <value>USA</value>
+            <value>USA</value>
+         </set>
+      </property>
+
+      <!-- results in a setAddressMap(java.util.Map) call -->
+      <property name = "addressMap">
+         <map>
+            <entry key = "1" value = "INDIA"/>
+            <entry key = "2" value = "Pakistan"/>
+            <entry key = "3" value = "USA"/>
+            <entry key = "4" value = "USA"/>
+         </map>
+      </property>
+      
+      <!-- results in a setAddressProp(java.util.Properties) call -->
+      <property name = "addressProp">
+         <props>
+            <prop key = "one">INDIA</prop>
+            <prop key = "one">INDIA</prop>
+            <prop key = "two">Pakistan</prop>
+            <prop key = "three">USA</prop>
+            <prop key = "four">USA</prop>
+         </props>
+      </property>
+   </bean>
+	
+</beans>

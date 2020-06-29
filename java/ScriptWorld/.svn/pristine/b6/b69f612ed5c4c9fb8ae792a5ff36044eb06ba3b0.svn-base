@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+(function(){
+"use strict"
+	// hoisting; 끌어올림
+	foo();
+ 	zoo = 1;
+ 	console.log(zoo);
+	// function declaration
+	function foo(){
+		console.log('foo');
+	}
+	// function expression
+	var zoo = function(){
+		console.log('zoo');
+	};
+	
+	zoo();
+})();
+
+(function(){
+	var x=y=2;
+	var obj = {subject:"eng", score:100};
+	
+	console.log(callByValue(x, y)); // 8
+	console.log(callByRef(obj)); // undefined
+	
+	console.log(x, y);
+	console.log(obj);
+	
+	function callByValue(x, y){
+		x=x*2;
+		y=y*2;
+		return x+y;
+	}
+
+	function callByRef(obj){
+		if( obj.hasOwnProperty("score") ){
+			obj['score'] = obj['score']*2; 
+		}
+	}
+})();
+
+(function(){
+	// let, const, 선언문을 만나기 전까지는 access 불가능(TDM)
+	// 재할당 가능, block scope
+	let letVar = 1;
+	// 재할당 불가, block scope
+	const constVar = 1;
+	if(true){
+		const blockConst = 1; 
+		let blockLet = 1;
+	}
+//	console.log(blockConst);
+})();
+
+(function(){
+	var funcArr = [];
+	for(let i=1; i<10; i++){
+	  funcArr[i-1] = function(){
+	    console.log(i);
+	  }
+	}
+	funcArr[0]();
+	funcArr[1]();
+})();
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

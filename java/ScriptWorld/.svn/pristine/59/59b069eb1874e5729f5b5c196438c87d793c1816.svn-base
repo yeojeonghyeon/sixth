@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+ul#menuList > li:nth-child(odd){
+	color: #7fe8e2;
+}
+ul#menuList > li:nth-child(even){
+	color: #479da5;
+}
+ul#menuList > li.menuItem{
+	margin: 15px;
+	float:left;
+}
+ul#menuList::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% 60% 10%;
+  background-image: linear-gradient(to bottom right, #95a1b3, #1b6953, #808217);
+  padding: 5px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 0.2px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  font-size: 1em;
+  text-align: left;
+}
+@media screen and (max-width: 600px) {
+	.grid-container {
+	  display: grid;
+	  grid-template-columns: auto auto auto 100px;
+	  background-image: linear-gradient(to bottom right, #95a1b3, #1b6953, #808217);
+	  padding: 5px;
+	}
+}
+</style>
+<script src="../js/jquery-3.4.1.js"></script>
+<script src="../js/chainedSelect.js"></script>
+<script>
+$(function(){
+	var cm = new ChainModule(["first","second","third","forth"]);
+	cm.init();
+});
+
+</script>
+</head>
+<body>
+	<header>
+		<h2>chained select</h2>
+	</header>
+	<nav>
+		<h4>다루는 내용들</h4>
+		<ul id="menuList">
+			<li class="menuItem">DOM Traversing</li>
+			<li class="menuItem">Event</li>
+			<li class="menuItem">DOM Manipulation</li>
+			<li class="menuItem">Ajax</li>
+		</ul>
+	</nav>
+	<section id="searchSection">
+		<div class="grid-container">
+			<div class="grid-item">
+				<span>제목:&nbsp;</span>
+				<input type="text" style="width:70%;" placeholder="검색할 내용을 입력하세요">
+			</div>
+			<div class="grid-item">
+				<select id="first"></select>
+				<select id="second"></select>
+				<select id="third"></select>
+				<select id="forth"></select>
+			</div>
+			<div class="grid-item">
+				<input type="button" id="requestBtn" value="검색">
+			</div>
+		</div>
+	</section>
+	<section id="contentSection">
+		<article>
+		</article>
+	</section>
+	<footer></footer>
+</body>
+</html>
