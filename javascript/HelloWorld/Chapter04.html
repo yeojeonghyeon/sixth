@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            li {
+                color:salmon;
+            }
+            h1, h2, h3 {
+                color:brown;
+            }
+            p {
+                border: 1px solid yellowgreen;
+            }
+            #addItemBtn {
+                background-color: lime;
+                color: white;
+                cursor: progress;
+            }
+
+            #addItemBtn:hover{
+                background-color: lime;
+                color: black;
+                cursor: pointer;
+            }
+            .normalInput {
+                background-color: linen;
+                font-size: 1em;
+            }
+            div#inputForm input.normalInput {
+                color:  magenta;
+                border-radius: 20%;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                var items = ["apple", "banana", "mango", "melon"];
+                var index = 0;
+                var btnObj = document.getElementById("addItemBtn");
+                var itemListObj = document.getElementById("itemList");
+                btnObj.addEventListener("click", function(){
+                    if ( index >= items.length-1 ) return;
+                    var item = items[index++];
+                    var liObj = document.createElement("li");
+                    liObj.innerText = item;
+                    itemListObj.appendChild(liObj);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>WEB</h1>
+        <h2>basic tags</h2>
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ol>
+        <input type=button id="addItemBtn" value="+">
+        <ul id="itemList">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>        
+        <h3>html</h3>
+        <p>Hypertext markup Language (HTML) is the standard markup language for creating web pages and wb applications. With</p>
+        <div id="inputForm">
+            <span>이름 : </span><input class="normalInput" type="text" placeholder="이름을 입력하세요">
+            <br>
+            <span>주소 : </span><input class="normalInput" type="text" placeholder="주소를 입력하세요">
+            <br>
+            <span>취미 : </span><input type="checkbox" value="reading">독서
+            <input type="checkbox" value="sports">스포츠
+            <br>
+            <textarea>기타로 입력되는 내용들</textarea>
+            <input type="text" value="no class">
+        </div>
+    </body>
+</html>

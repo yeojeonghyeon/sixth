@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .colorChange {
+            background-color: cyan;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var containerObj = document.querySelector("#container");
+            var toggleBtn = document.getElementById("toggleBtn");
+
+            toggleBtn.addEventListener("click", function () {
+                for (var element of containerObj.children) {
+                    element.classList.toggle("colorChange");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <ul>
+            <p>list </p>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+        </ul>
+        <input type="button" id="toggleBtn" value="toggle">
+    </div>
+</body>
+</html>

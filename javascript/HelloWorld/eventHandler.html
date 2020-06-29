@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                document.getElementById("firstBtn").addEventListener("click", function(){
+                    alert(1);
+                });
+                document.getElementById("secondBtn").onclick = function(){
+                    alert(2);
+                };
+            });
+        </script>
+    </head>
+    <body>
+        <input type="button" id="firstBtn" value="firstBtn">
+        <input type="button" id="secondBtn" value="secondBtn">
+        <input type="button" id="thirdBtn" value="thirdBtn" onclick="alert(3);">
+    </body>
+</html>

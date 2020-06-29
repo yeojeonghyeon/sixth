@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table#addressTbl{
+                width: 100%;
+            }
+            table#addressTbl th, table#addressTbl td {
+                /* background-color: rgb(158, 224, 125); */
+                padding: 10px;
+                border:1px solid rgb(61, 34, 61);
+            }
+            table#addressTbl > tbody > tr:nth-child(odd) {
+                background-color: rgb(251, 251, 249);
+            }            
+            table#addressTbl > tbody > tr:nth-child(even) {
+                background-color: rgb(214, 213, 198);
+            }
+            table#addressTbl > tbody > tr:hover {
+                background-color: rgb(177, 83, 20);
+                cursor: pointer;
+                color:rgb(247, 233, 233);
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                var items = [
+                    {seq:1, name:"김선국", gender:"남", cellNo:"010-4787-7098"},
+                    {seq:2, name:"김선길", gender:"남", cellNo:"010-9325-9363"},
+                    {seq:3, name:"김영훈", gender:"남", cellNo:"010-4814-6312"},
+                    {seq:4, name:"김재현", gender:"남", cellNo:"010-4814-6312"}
+                ];
+                buildRows(items, document.getElementById("addressTbl"));
+
+                /*
+                * params
+                *  1. items : [{},{}], 각각의 row를 구성할 content
+                *  2. tblObj : 각각의 로우를 구성해서 추가할 table DOM 객체
+                */
+                function buildRows(items, tblObj){
+                    var tbodyObj = tblObj.children[1];
+                    while( tbodyObj.hasChildNodes() ){
+                        tbodyObj.removeChild(tbodyObj.firstChild);
+                    }
+                    for( var i = 0; i < items.length; i++){
+                        var item = items[i];
+                        var tr = document.createElement("tr");
+                        var td1 = document.createElement("td");
+                        td1.innerText = item.seq;
+                        var td2 = document.createElement("td");
+                        td2.innerText = item.name;
+                        var td3 = document.createElement("td");
+                        td3.innerText = item.gender;                                                
+                        var td4 = document.createElement("td");
+                        td4.innerText = item.cellNo;
+                        tr.appendChild(td1);
+                        tr.appendChild(td2);
+                        tr.appendChild(td3);
+                        tr.appendChild(td4);
+                        tbodyObj.appendChild(tr);
+                    }
+                }    
+            });
+            
+        </script>
+    </head>
+    <body>
+        <h3>JAVA 과정 주소록</h3>
+        <table id="addressTbl">
+            <thead>
+                <tr>
+                    <th rowspan=2>순번</th>
+                    <th colspan=2>신상</th>
+                    <th rowspan=2>전화번호</th>
+                </tr>
+                <tr>
+                    <th>이름</th>
+                    <th>성별</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>김선국</td>
+                    <td>남</td>
+                    <td>010-4787-7098</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>김선길</td>
+                    <td>남</td>
+                    <td>010-9325-9363</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>김선길</td>
+                    <td>남</td>
+                    <td>010-9325-9363</td>
+                </tr>  
+                <tr>
+                    <td>3</td>
+                    <td>김선길</td>
+                    <td>남</td>
+                    <td>010-9325-9363</td>
+                </tr>                               
+            </tbody>
+        </table>
+    </body>
+</html>

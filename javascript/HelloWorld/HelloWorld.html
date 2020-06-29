@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello World</title>
+        <style></style>
+        <script>
+            // 버튼이 클릭 시 실행되는 함수
+            function doSubmit(){
+                var userName = document.getElementById("userName");
+                var pwd = document.getElementById("pwd");
+                var female = document.getElementById("female");
+                var male = document.getElementById("male");
+                var hobby1 = document.getElementById("hobby1");
+                var hobby2 = document.getElementById("hobby2");
+                var hobby3 = document.getElementById("hobby3");
+                var resultTxtArea = document.getElementById("resultTxtArea");
+                var resultStr = "userName : " + userName.value + "\n"
+                              + "pwd : " + pwd.value + "\n"
+                              + "female : " + female.value + "\n"
+                              + "male : " + male.value + "\n"
+                              + "hobby1 : " + hobby1.checked;
+                resultTxtArea.value = resultStr;
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <input id="userName" type="text" placeholder="이름을 입력하세요">
+            <br>
+            <input id="pwd" type="password" placeholder="패스워드 입력">
+            <br>
+            <input type="radio" id="female" name="gendor" value="여성">여성
+            <input type="radio" id="male" name="gendor" value="남성">남성
+            <br>
+            <input type="checkbox" id="hobby1" name="hobby">독서
+            <input type="checkbox" id="hobby2" name="hobby">골프
+            <input type="checkbox" id="hobby2" name="hobby">유튜버
+            <br>
+            <button id="submitBtn" onclick="doSubmit();">제출</button>
+        </div>
+        <div>
+            <textarea id="resultTxtArea"></textarea>
+        </div>
+    </body>
+</html>

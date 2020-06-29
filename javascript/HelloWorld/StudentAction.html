@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>학생 결석 지각 현황</title>
+        <style>
+            div{
+                background-color: plum;
+            }
+        </style>
+        <script>
+            var stu1 = {score:100, name:"홍길동"};
+            var stu2 = {score:100, name:"이기동"};
+            function doAction(action, index){
+                var student;
+                var dpObj;
+                if ( index == 1 ){
+                    student = stu1;
+                    dpObj = document.getElementById("firstPerson");
+                }else if ( index == 2 ){
+                    student = stu2;
+                    dpObj = document.getElementById("secondPerson");
+                }else{
+                    return;
+                }
+
+                if ( action == 1 ){
+                    student.score = student.score + 10;
+                }else if ( action == 2 ){
+                    student.score = student.score - 10;
+                }else if ( action == 3 ){
+                    student.score = student.score - 5;
+                }
+                dpObj.value = student.score;
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="firstPerson">
+            <br>
+            <button id="action1" onclick="doAction(1, 1);">선행</button>
+            <button id="action2" onclick="doAction(2, 1);">결석</button>
+            <button id="action3" onclick="doAction(3, 1);">지각</button>
+        </div>
+        <div>
+            <input type="text" id="secondPerson">
+            <br>
+            <button id="action1" onclick="doAction(1, 2);">선행</button>
+            <button id="action2" onclick="doAction(2, 2);">결석</button>
+            <button id="action3" onclick="doAction(3, 2);">지각</button>
+        </div>        
+        <div></div>
+    </body>
+</html>

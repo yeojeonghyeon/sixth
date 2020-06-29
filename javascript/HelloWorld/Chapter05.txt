@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table#addressTbl{
+                width: 100%;
+            }
+            table#addressTbl th, table#addressTbl td {
+                background-color: rgba(158, 224, 125, 0.653);
+                padding: 10px;
+                border:1px solid rgb(61, 34, 61);
+            }
+            table#addressTbl > tbody > tr:nth-child(even) {
+                background-color: rgba(98, 92, 36, 0.557);
+            }
+        </style>
+        <script>
+        </script>
+    </head>
+    <body>
+        <h3>JAVA 과정 주소록</h3>
+        <table id="addressTbl">
+            <thead>
+                <tr>
+                    <th rowspan=2>순번</th>
+                    <th colspan=2>신상</th>
+                    <th rowspan=2>전화번호</th>
+                </tr>
+                <tr>
+                    <th>이름</th>
+                    <th>성별</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>김선국</td>
+                    <td>남</td>
+                    <td>010-4787-7098</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>김선길</td>
+                    <td>남</td>
+                    <td>010-9325-9363</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>김선길</td>
+                    <td>남</td>
+                    <td>010-9325-9363</td>
+                </tr>  
+                <tr>
+                    <td>3</td>
+                    <td>김선길</td>
+                    <td>남</td>
+                    <td>010-9325-9363</td>
+                </tr>                               
+            </tbody>
+        </table>
+    </body>
+</html>

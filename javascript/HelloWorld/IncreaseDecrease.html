@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                var no = 0;
+                var dpObj = document.getElementById("dpTxt");
+                var increaseBtn = document.getElementById("increaseBtn");
+                var decreaseBtn = document.getElementById("decreaseBtn");
+                increaseBtn.addEventListener("click", function(){
+                    no++;
+                    dpObj.value = no;
+                });
+                decreaseBtn.addEventListener("click", function(){
+                    no--;
+                    dpObj.value = no;
+                });
+            });
+        </script>
+        <style>
+            div{
+                width:100%;
+                background-color: gray;
+                border:1px solid plum;
+            }
+            div#container div{
+                width:30%;
+                background-color: skyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div>
+                <input type="text" id="dpTxt" placeholder="초기값">
+            </div>
+            <div>
+                <input type="button" value="+" id="increaseBtn">
+                <input type="button" value="-" id="decreaseBtn">
+            </div>
+        </div>
+    </body>
+</html>

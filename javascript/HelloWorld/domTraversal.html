@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .bright{
+                background: cyan;
+            }
+        </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                var divObj = document.querySelector("#container");
+                document.getElementById("toggleClassBtn").addEventListener("click", function(){
+                    for(var ele of divObj.children){
+                        ele.classList.toggle("bright");
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <input type="text" value="hello">
+            <input type="button" value="press">
+            <p>hello world</p>
+            <ul>
+                <li>disco</li>
+                <li>samba</li>
+                <li>waltz</li>
+            </ul>
+        </div>
+        <div>
+            <input type="button" value="toggle class" id="toggleClassBtn">
+        </div>
+    </body>
+</html>
