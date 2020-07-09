@@ -11,4 +11,5 @@
 <fullyQualifiedTypeName name="com.scggi.servlet.temp.MenuItem"/>
 <fullyQualifiedTypeName name="java.util.stream.Stream"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.stream.IntStream"/>
 </qualifiedTypeNameHistroy>

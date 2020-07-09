@@ -10,6 +10,7 @@
             list-style: none;
             width:50%;
             justify-content: space-around;
+            align-items: baseline;
             padding-left: 0%;
         }
         .navigation > .items > li{
@@ -27,8 +28,15 @@
                 if ( index == 2 ) return false;
             });
             
+            $(".navigation > .items").on("click", function(event){
+                console.log(event.target.innerText);
+            });
+
+            var arr = [1, 2, 3, 4, 5];
+            $.each(arr, function(index, ele){
+                console.log(ele);
+            });
         });
-        
     </script>
 </head>
 <body>
