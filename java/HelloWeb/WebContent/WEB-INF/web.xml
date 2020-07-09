@@ -19,4 +19,14 @@
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/HelloServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ClassOrStudentServlet</display-name>
+    <servlet-name>ClassOrStudentServlet</servlet-name>
+    <servlet-class>com.helloworld.servlet.ClassOrStudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ClassOrStudentServlet</servlet-name>
+    <url-pattern>/ClassOrStudentServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		document.addEventListener("DOMContentLoaded", function(){
+			document.getElementById("submitBtn").addEventListener("click", function(){
+				document.getElementById("transferForm").submit();
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<form id="transferForm" method="post" action="ClassOrStudentServlet">
+			<input type="radio" name="classOrStudent" value="class" checked><label for="class">클래스</label>
+			<input type="radio" name="classOrStudent" value="student"><label for="student">학생</label>
+			<br>
+			<input type="button" id="submitBtn" value="제출">
+		</form>		
+	</div>
+</body>
+</html>

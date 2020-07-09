@@ -12795,3 +12795,9 @@ java.net.UnknownHostException: jope.ow2.org
 	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
 	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.genuitec.eclipse.code.ui 1 0 2020-07-09 14:58:06.372
+!MESSAGE There are task errors. See the output for details.
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-07-09 14:58:09.887
+!MESSAGE CodeMix blocked calls before Editor was ready [C:\dev\git\sixth\java\HelloWeb\WebContent\chooseClassOrStudent.html]: activateEditor=1 getOutline=1 setCursorAndSelectionAndReport=1 -- this message can normally be ignored but is tracked for support sessions.
