@@ -42,5 +42,4 @@ public class ClassOrStudentServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

@@ -29,4 +29,14 @@
     <servlet-name>ClassOrStudentServlet</servlet-name>
     <url-pattern>/ClassOrStudentServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CookieMakingServlet</display-name>
+    <servlet-name>CookieMakingServlet</servlet-name>
+    <servlet-class>com.helloworld.servlet.CookieMakingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieMakingServlet</servlet-name>
+    <url-pattern>/CookieMakingServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
