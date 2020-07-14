@@ -1,6 +1,7 @@
 package com.helloworld.servlet;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,9 +23,12 @@ public class CookieMakingServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String food = request.getParameter("favoriteFood");
 		String sport = request.getParameter("favoriteSport");
-
+		System.out.println(food);
+//		response.setContentType("text/html;charset=UTF-8");
+//		response.setCharacterEncoding("UTF-8");
 		response.addCookie(new Cookie("favoriteFood", food));
 		response.addCookie(new Cookie("favoriteSport", sport));
+//		response.addCookie(new Cookie("favoriteSport", sport));
 		RequestDispatcher rd = request.getRequestDispatcher("./cookieAndSession/cookie.jsp");
 		rd.forward(request, response);
 	}
