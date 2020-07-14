@@ -26,6 +26,14 @@
 			<li>${cookie.favoriteSport.value}</li>
 		</ul>
 		<ul>
+		<%
+			Cookie[] cookies = request.getCookies();
+			for(Cookie cookie : cookies){
+		%>
+				<li><%=cookie.getName()%><%=cookie.getValue()%></li>
+		<%
+			}	
+		%>
 		</ul>		
 	</div>
 </body>
