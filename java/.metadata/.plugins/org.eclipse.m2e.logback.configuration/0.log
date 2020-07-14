@@ -4351,3 +4351,4 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact com.oracle:oj
 2020-07-14 10:30:17,028 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2020-07-14 10:32:59,576 [Worker-2: Check Injection] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: C:\dev\git\sixth\java\.metadata\com.genuitec.eclipse.webclipse.livepreview\1\store
 2020-07-14 15:00:16,928 [Worker-60: Check Injection] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: C:\dev\git\sixth\java\.metadata\com.genuitec.eclipse.webclipse.livepreview\2\store
+2020-07-14 15:37:28,611 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

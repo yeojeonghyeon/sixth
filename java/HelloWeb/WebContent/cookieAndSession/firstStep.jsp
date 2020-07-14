@@ -15,7 +15,7 @@
 			<li>${sessionScope.pwd}</li>
 		</ul>
 	</div>
-	<form method="post" action="../SecondStepServlet">
+	<form method="post" action="./SecondStepServlet">
 		<input type="text" name="favoriteFood" value="" placeholder="좋아하는 음식">
 		<input type="text" name="favoriteSport" value="" placeholder="좋아하는 스포츠">
 		<input type="submit" value="전송">

@@ -52,7 +52,6 @@
     <url-pattern>/CookieMakingServlet</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
     <display-name>FirstStepServlet</display-name>
     <servlet-name>FirstStepServlet</servlet-name>
     <servlet-class>com.helloworld.servlet.FirstStepServlet</servlet-class>
@@ -61,4 +60,13 @@
     <servlet-name>FirstStepServlet</servlet-name>
     <url-pattern>/FirstStepServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <display-name>SecondStepServlet</display-name>
+    <servlet-name>SecondStepServlet</servlet-name>
+    <servlet-class>com.helloworld.servlet.SecondStepServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SecondStepServlet</servlet-name>
+    <url-pattern>/SecondStepServlet</url-pattern>
+  </servlet-mapping>  
 </web-app>
