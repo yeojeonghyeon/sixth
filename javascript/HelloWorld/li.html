@@ -10,11 +10,17 @@
                 e.target.title = "선택됨";
                 e.target.parentElement.classList.add("on");
                 var children = this.children;
-                for(var li of children){
+                // for(var li of children){
+                //     if ( e.target.parentElement === li ) continue;
+                //     li.classList.remove("on");
+                //     li.firstElementChild.title = "";
+                // }
+                for(var i=0; i < children.length; i++){
+                    var li = children[i];
                     if ( e.target.parentElement === li ) continue;
                     li.classList.remove("on");
                     li.firstElementChild.title = "";
-                }
+                }                
             });
         });
      </script>            
