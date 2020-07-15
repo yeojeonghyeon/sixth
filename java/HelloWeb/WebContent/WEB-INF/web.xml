@@ -68,5 +68,15 @@
   <servlet-mapping>
     <servlet-name>SecondStepServlet</servlet-name>
     <url-pattern>/SecondStepServlet</url-pattern>
-  </servlet-mapping>  
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdderServlet</display-name>
+    <servlet-name>AdderServlet</servlet-name>
+    <servlet-class>com.helloworld.servlet.AdderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdderServlet</servlet-name>
+    <url-pattern>/AdderServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script>
+//submitBtn 버튼에 click 이벤트 헨들러를 달아서, firstNum, secondNum 값이 없을 경우 alert, return
+document.addEventListener("DOMContentLoaded", function(){
+//	var formObj = document.getElementById("searchForm");
+	var firstObj = document.getElementById("firstNum");
+	var secondObj = document.getElementById("secondNum");
+ // 숫자가 하나 이상 올때만 true
+	
+	var filterArr = [];
+	filterArr[0] = {
+			filterName: "isEmpty",
+			func: function(value){
+				return !!value;
+			}
+	};
+	filterArr[1] = {
+			filterName: "isNumeric",
+			func: function(value){
+				var regexp = /^\d+/;				
+				return regexp.test(value);
+			}
+	};
+	
+	function validCheck(filterArr, candidateArr){
+		var resultArr = [];
+		for(var candidate of candidateArr){
+			var result = {id:candidate.id, resultArr:[]};
+			filterArr.forEach(function(filter){
+				result.resultArr.push({filterName:filter.filterName, done:filter.func(candidate.value)});
+			});
+			resultArr.push(result);
+		}
+		return resultArr;
+	}
+	
+	document.getElementById("submitBtn").addEventListener("click", function(){
+		var validCandiList = [];
+		for(var ele of this.parentNode.children){
+			if ( ele.dataset.valid == 'y' ) validCandiList.push(ele);
+		}
+		var filterResult = validCheck(filterArr, validCandiList);
+		var isAllPassed = true;
+		for(var result of filterResult){
+			var notPassed = result.resultArr.filter(function(v){
+				return !v.done;
+			});
+			if ( notPassed.length > 0 ){
+				alert(`id : ${result.id} ${notPassed.map(v=>`${v.filterName} ${v.done}`).join(',')}`);
+				isAllPassed = false;
+			}
+		}
+		if ( !isAllPassed ) return;
+		this.parentNode.submit();
+	});
+});
+</script>
+</head>
+<body>
+	<form id="searchForm" action="../AdderServlet" method="POST">
+		<input type="text" data-valid="y" id="firstNum" name="firstNum" value="" placeholder="첫번째 숫자">
+		<input type="text" data-valid="y" id="secondNum" name="secondNum" value="" placeholder="두번째 숫자"><br>
+		<input type="button" id="submitBtn" value="더하기 서비스 호출">
+	</form>
+</body>
+</html>
