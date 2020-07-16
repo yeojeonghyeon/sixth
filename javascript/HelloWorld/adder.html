@@ -8,8 +8,8 @@ form#searchForm, form#inputForm{
 	position: relative;
 }
 
-div.filterResultDiv > input.closeBtn{
-	right: 0%;
+div > input.closeBtn{
+	right: 0;
 	position: absolute;
     border: 1px solid #ccc;
 	background-color: red;
@@ -34,6 +34,7 @@ div.show{
 }
 
 div.hide{
+	z-index: 2;	
 	top: 100%;
 	position: absolute;
     border: 1px solid #ccc;
@@ -106,6 +107,10 @@ div.hide{
 		function showResultDiv(containerId, resultArr){
 			var resultDiv, closeBtn;
 			var container = document.getElementById(containerId);
+			var previousDiv = container.querySelector("div.show");
+			if ( previousDiv ){
+				container.removeChild(previousDiv);
+			}
 			if ( !resultDiv ){
 				resultDiv = document.createElement("div");
 				resultDiv.classList.add("show");
@@ -130,7 +135,7 @@ div.hide{
 				li.innerText = `id : ${result.id} ${result.resultArr.map(v=>`${v.filterName} ${v.done}`).join(',')}`;
 				ul.appendChild(li);
 			}
-			resultDiv.children.length = 1;
+			// resultDiv.children.length = 1;
 			resultDiv.appendChild(ul);
 			document.getElementById(containerId).appendChild(resultDiv);
 		}
