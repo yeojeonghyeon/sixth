@@ -69,12 +69,11 @@ div.hide{
 }
 </style>
 <script>
-//submitBtn 버튼에 click 이벤트 헨들러를 달아서, firstNum, secondNum 값이 없을 경우 alert, return
 (function(global){
 	function filterModule(){
 		var filterArr = [];
 		filterArr[0] = {
-				filterName: "isEmpty",
+				filterName: "isNotEmpty",
 				func: function(value){
 					return !!value;
 				}
@@ -135,7 +134,6 @@ div.hide{
 				li.innerText = `id : ${result.id} ${result.resultArr.map(v=>`${v.filterName} ${v.done}`).join(',')}`;
 				ul.appendChild(li);
 			}
-			// resultDiv.children.length = 1;
 			resultDiv.appendChild(ul);
 			document.getElementById(containerId).appendChild(resultDiv);
 		}

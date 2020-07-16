@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Insert title here</title>
+        <style>
+            body{
+                background-image: url("https://i.pinimg.com/564x/5b/42/db/5b42dbc42d45e3699174e77b73bc16b2.jpg");
+                background-size: cover;
+            }
+            form#searchForm{
+                position: relative;
+            }
+            .action{
+                position: fixed;
+                width: 350px;
+                height: auto;
+                border-radius: 10px;
+                padding: 5px;
+                background-color: pink;
+                animation : change 1s ease-out;
+                animation-fill-mode: forwards;
+            }
+            .close{
+                position: fixed;
+                width: 350px;
+                height: auto;
+                border-radius: 10px;
+                background-color: pink;
+                animation : closeDiv 1s ease-out;
+                animation-fill-mode: forwards;
+            }
+            .exitBtn{
+                border-radius: 20px;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            @keyframes change{
+                    0%{opacity: 0%;
+                    transform: scale(0);
+                };
+                    100%{opacity: 100%;
+                    transform: scale(5);
+                };
+            }
+            @keyframes closeDiv{
+                    100%{opacity: 100%;
+                    transform: scale(0);
+                };
+                    0%{opacity: 0%;
+                    transform: scale(5);
+                };
+            }
+            ul{
+                list-style: none;
+                padding-left: 10px;
+            }
+        </style>
+        <script>
+            //submitBtn 버튼에 click 이벤트 헨들러를 달아서, firstNum, secondNum 값이 없을 경우 alert, return
+            (function (global) {
+                var resultDiv;
+                var resultDivId;
+                function validPrint(container, candidates, flag = true) {
+                    var filterArr = [];
+                    filterArr[0] = {
+                        filterName: "isEmpty",
+                        func: function (value) {
+                            return !!value;
+                        }
+                    };
+                    filterArr[1] = {
+                        filterName: "isNumeric",
+                        func: function (value) {
+                            var regexp = /^\d+/;
+                            return regexp.test(value);
+                        }
+                    };
+                    var makeId = function () {
+                        return '_' + Math.random().toString(36).substr(2, 9);
+                    };
+
+                    test(container, candidates, flag);
+
+                    function validCheck(filterArr, candidateArr) {
+                        var resultArr = [];
+                        for (var candidate of candidateArr) {
+                            var result = { id: candidate.id, resultArr: [] };
+                            filterArr.forEach(function (filter) {
+                                result.resultArr.push({ filterName: filter.filterName, done: filter.func(candidate.value) });
+                            });
+                            resultArr.push(result);
+                        }
+                        return resultArr;
+                    }
+                    function test(containerId, candidateArr, showFlag) {
+                        var resultArr = validCheck(filterArr, candidateArr);
+                        if (showFlag) {
+                            showResultDiv(containerId, resultArr);
+                        }
+                        return resultArr;
+                    }
+                    function showResultDiv(containerId, resultArr) {
+                        var containerObj = document.getElementById(containerId);
+                        console.log(containerObj.classList)
+                        if(containerObj.lastChild.classList =="action"){
+                            resultDiv = containerObj.lastChild;
+                        }
+                        else{
+                            resultDiv = "";
+                        }
+                        if (!resultDiv || resultDiv == "") {
+                            resultDiv = document.createElement("div");
+                            resultDiv.id = resultDivId = makeId();
+                        }
+                        if (resultDiv.classList == "action") {
+                            return;
+                        }
+                        if (resultDiv.innerText != "") {
+                            resultDiv.innerText = "";
+                        }
+                        resultDiv.classList.remove("close");
+                        resultDiv.classList.add("action");
+
+                        var btn = document.createElement("input");
+                        btn.type = "button";
+                        btn.value = "X";
+                        btn.classList = "exitBtn";
+                        btn.addEventListener("click", function () {
+                            resultDiv = document.getElementById(containerId).lastChild;
+                            resultDiv.classList.remove("action");
+                            resultDiv.classList.add("close");
+                        });
+
+                        var ul, li;
+                        ul = document.createElement("ul");
+
+                        for (var result of resultArr) {
+                            li = document.createElement("li");
+                            li.innerText = `id : ${result.id} ${result.resultArr.map(v => `${v.filterName} ${v.done}`).join(',')}`;
+                            ul.appendChild(li);
+                        }
+                        resultDiv.children.length = 1;
+                        resultDiv.appendChild(ul);
+                        resultDiv.appendChild(btn);
+                        containerObj.appendChild(resultDiv);
+                    }
+                }
+                global.validPrint = validPrint;
+            })(window || this);
+            function launchValidPrint(formId, btnId) {
+                document.getElementById(btnId).addEventListener("click", function () {
+                    var validCandiList = [];
+                    for (var ele of this.parentNode.children) {
+                        if (ele.dataset.valid == 'y') validCandiList.push(ele);
+                    }
+                    validPrint(formId, validCandiList);
+                });
+
+            }
+            document.addEventListener("DOMContentLoaded", function () {
+                var firstObj = document.getElementById("firstNum");
+                var secondObj = document.getElementById("secondNum");
+                launchValidPrint("searchForm", "submitBtn");
+                launchValidPrint("searchForm2", "submitBtn2");
+            });
+        </script>
+    </head>
+    <body>
+        <form id="searchForm" action="../AdderServlet" method="POST">
+            <input type="text" data-valid="y" id="firstNum" name="firstNum" value="" placeholder="첫번째 숫자">
+            <input type="text" data-valid="y" id="secondNum" name="secondNum" value="" placeholder="두번째 숫자"><br>
+            <input type="button" id="submitBtn" value="더하기 서비스 호출">
+        </form>
+        <br><br><br><br>
+        <form id="searchForm2" action="../AdderServlet" method="POST">
+            <input type="text" data-valid="y" id="firstNum" name="firstNum" value="" placeholder="첫번째 숫자">
+            <input type="text" data-valid="y" id="secondNum" name="secondNum" value="" placeholder="두번째 숫자"><br>
+            <input type="button" id="submitBtn2" value="더하기 서비스 호출">
+        </form>
+    </body>
+</html>
