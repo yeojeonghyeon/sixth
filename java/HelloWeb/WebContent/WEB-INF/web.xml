@@ -79,4 +79,14 @@
     <servlet-name>AdderServlet</servlet-name>
     <url-pattern>/AdderServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChooseSeasonServlet</display-name>
+    <servlet-name>ChooseSeasonServlet</servlet-name>
+    <servlet-class>com.helloworld.servlet.ChooseSeasonServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChooseSeasonServlet</servlet-name>
+    <url-pattern>/ChooseSeasonServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -18,7 +18,7 @@
                 border-radius: 10px;
                 padding: 5px;
                 background-color: pink;
-                animation : change 1s ease-out;
+                animation : change 500ms ease-out;
                 animation-fill-mode: forwards;
             }
             .close{
@@ -27,7 +27,7 @@
                 height: auto;
                 border-radius: 10px;
                 background-color: pink;
-                animation : closeDiv 1s ease-out;
+                animation : closeDiv 500ms ease-out;
                 animation-fill-mode: forwards;
             }
             .exitBtn{
@@ -114,19 +114,18 @@
                             resultDiv = document.createElement("div");
                             resultDiv.id = resultDivId = makeId();
                         }
-                        if (resultDiv.classList == "action") {
-                            return;
+                        if (resultDiv.classList != "action") {
+                            resultDiv.classList.remove("close");
+                            resultDiv.classList.add("action");
                         }
                         if (resultDiv.innerText != "") {
                             resultDiv.innerText = "";
                         }
-                        resultDiv.classList.remove("close");
-                        resultDiv.classList.add("action");
 
                         var btn = document.createElement("input");
                         btn.type = "button";
                         btn.value = "X";
-                        btn.classList = "exitBtn";
+                        btn.classList.add("exitBtn");
                         btn.addEventListener("click", function () {
                             resultDiv = document.getElementById(containerId).lastChild;
                             resultDiv.classList.remove("action");

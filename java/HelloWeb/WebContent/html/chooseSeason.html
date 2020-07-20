@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+	section{
+		border: 1px solid #bbbbbb;
+	}
+
+	article > ul > li{
+		background-color: green;
+		width: 20%;		
+	}
+</style>
+<script defer>
+document.addEventListener("DOMContentLoaded", function(){
+	var checkBoxes = document.getElementsByName("seasons");
+	var resultObj = document.getElementById("result");
+	document.getElementById("submitBtn").addEventListener("click", function(){
+		var result = [];
+		checkBoxes.forEach(function(ele, index){
+			if ( ele.checked ){
+				var lis = document.getElementById(ele.value).children;
+				for (var li of lis){
+					result.push(li.innerText);
+				}
+			}
+		});
+		resultObj.value = result.join(':');
+		this.parentElement.parentElement.submit();
+	});
+});
+</script>
+</head>
+<body>
+	<form method="post" action="../ChooseSeasonServlet">
+		<section>
+			<h3>계절별 음식</h3>
+			<article>
+				<h4>봄</h4>
+				<ul id="spring">
+					<li>도다리 쑥국</li>
+					<li>쭈꾸미</li>
+					<li>냉면</li>
+					<li>짜장면</li>
+				</ul>
+			</article>
+			<article>
+				<h4>여름</h4>
+				<ul id="summer">
+					<li>전어 구이</li>
+					<li>낚지 탕탕이</li>
+					<li>꽃게라면</li>
+					<li>해파리 냉채</li>
+				</ul>
+			</article>
+			<article>
+				<h4>가을</h4>
+				<ul id="autumn">
+					<li>가을 전어</li>
+					<li>갑오징어 먹물라면</li>
+					<li>감성돔 물회</li>
+					<li>띠로리</li>
+				</ul>
+			</article>
+		</section>
+		<section>
+			<input type="checkbox" name="seasons" value="spring">봄
+			<br>
+			<input type="checkbox" name="seasons" value="summer">여름
+			<br>
+			<input type="checkbox" name="seasons" value="autumn">가을
+			<input type="text" name="result" id="result" value="">
+			<input id="submitBtn" type="button" value="제출">
+		</section>		
+	</form>
+</body>
+</html>
