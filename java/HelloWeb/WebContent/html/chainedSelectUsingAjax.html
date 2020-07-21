@@ -3,6 +3,24 @@
 <head>
 <meta charset="utf-8">
 <title>Chained Select Using Ajax</title>
+<style>
+div#container{
+	width: 400px;
+ 	border: 1px solid #bbbbbb;
+	display: flex;
+	justify-content: space-between;
+}
+div#container select{
+	width: 100px;
+	flex-grow: 1;
+	margin: 4px;
+	border-radius: 4px;
+}
+div#container select:focus{
+	color: white;
+	background-color: #EF5350;
+}
+</style>
 <script>
 (function(global){
     function ChainedModule(containerId, selectIdArr, nodes){
