@@ -8,6 +8,7 @@
 <title>Choose Season</title>
 </head>
 <body>
+<c:set var="c" value="aaa" scope="request"></c:set>
 	<ul>
 		<c:if test="${not empty result}">
 			<c:forEach items="${result}" var="item">
@@ -15,6 +16,16 @@
 				<li>${item["foodName"]}</li>
 			</c:forEach>
 		</c:if>
-	</ul>	
+	</ul>
+	<span>${info.name}</span><span>${info.age}</span>
+	<br>
+	<span>${info1.food.foodName}</span>
+	<br>
+	<span>${paramValues.seasons[0]}</span><span>${paramValues["seasons"][0]}</span>
+	<span>${paramValues.seasons[1]}</span>
+	<br>
+	<span>${pageContext.request.contextPath}</span>
+	<br>
+	<span>${c}</span>
 </body>
 </html>

@@ -89,4 +89,14 @@
     <servlet-name>ChooseSeasonServlet</servlet-name>
     <url-pattern>/ChooseSeasonServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChainedServlet</display-name>
+    <servlet-name>ChainedServlet</servlet-name>
+    <servlet-class>com.helloworld.servlet.ChainedServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChainedServlet</servlet-name>
+    <url-pattern>/ChainedServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

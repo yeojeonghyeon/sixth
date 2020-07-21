@@ -26,6 +26,8 @@ public class ChooseSeasonServlet extends HttpServlet {
 		List<FoodForSeason> list = new ArrayList<>();
 		
 		Map<String, String> map = new HashMap<String, String>();
+		Map<String, FoodForSeason> map1 = new HashMap<String, FoodForSeason>();
+		map1.put("food", new FoodForSeason("아무거나 먹자"));
 		map.put("name", "hong gil dong");
 		map.put("age", "1555");
 		
@@ -33,8 +35,8 @@ public class ChooseSeasonServlet extends HttpServlet {
 			list.add(new FoodForSeason(st.nextToken()));
 		}
 		request.setAttribute("result", list);
-		
 		request.setAttribute("info", map);
+		request.setAttribute("info1", map1);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("./jsp/ChooseSeason.jsp");
 		rd.forward(request,  response);

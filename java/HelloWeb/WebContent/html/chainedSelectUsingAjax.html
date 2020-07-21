@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Chained Select Using Ajax</title>
+<script>
+(function(global){
+    function ChainedModule(containerId, selectIdArr, nodes){
+        var containderObj;
+        var selectObjArr;
+        function changeHandler(){
+            if( this.value != "" ){
+                var index = selectObjArr.indexOf(this);
+                fillSelectDataByPid(this.value, selectObjArr[++index]);
+                for(var i = index+1; i < selectObjArr.length; i++){
+                    selectObjArr[i].options.length = 1;
+                }
+            }else{
+                var index = selectObjArr.indexOf(this);
+                for(var i = index+1; i < selectObjArr.length; i++){
+                    selectObjArr[i].options.length = 1;
+                }
+            }
+        }
+        this.init = function(){
+            containderObj = document.getElementById(containerId);
+            selectObjArr = [];
+            for(var selectId of selectIdArr){
+                var selectObj = document.createElement("select");
+                selectObj.id = selectId;
+                selectObj.name = selectId;
+                // -선택- option 추가
+                var option = document.createElement("option");
+                option.value = "";
+                option.innerText = "-선택-";
+                selectObj.appendChild(option);
+                selectObj.addEventListener("change", changeHandler);
+                selectObjArr.push(selectObj);
+                containderObj.appendChild(selectObj);
+            }
+            fillSelectDataByPid("", selectObjArr[0]);
+        };
+        function fillSelectDataByPid(id, selectObj){
+            var filteredNodes = nodes.filter(function(element){
+                return id == element.pid;
+            });
+            if ( selectObj.options ) selectObj.options.length = 1;
+            for(var node of filteredNodes){
+                var option = document.createElement("option");
+                option.value = node.id;
+                option.innerText = node.name;
+                selectObj.appendChild(option);
+            }
+        };
+    }
+    global.ChainedModule = ChainedModule;
+})(this||window);
+
+document.addEventListener("DOMContentLoaded", function(){
+	document.getElementById("ajaxBtn").addEventListener("click", function(){
+		var httpRequest = new XMLHttpRequest();
+		httpRequest.onreadystatechange = function(){
+			if ( httpRequest.readyState == XMLHttpRequest.DONE ){
+				if ( httpRequest.status == '200' ){
+					new ChainedModule("container", ["firstBtn", "secondBtn", "thirdBtn"], JSON.parse(httpRequest.responseText)).init();
+				}
+			}
+		};
+		var checked = document.querySelector("input[name='menuType']:checked");
+		var params = `menuType=${checked.value}`;
+	    httpRequest.open('post', '../ChainedServlet');
+		httpRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	    httpRequest.send(params);
+	});
+});
+</script>
+</head>
+<body>
+	<form>
+		<input type="radio" name="menuType" value="address" checked>주소
+		<br>
+		<input type="radio" name="menuType" value="coffee">커피
+		<br>
+		<input type="button" value="ajax 요청" id="ajaxBtn">
+	</form>
+	<div id="container"></div>
+</body>
+</html>
