@@ -17,21 +17,29 @@
 		function validCheck(filterArr, candidateArr){
 			var resultArr = [];
 			for(var candidate of candidateArr){
+				var applyFilter = candidate.dataset.filter.split("|");
 				var result = {id:candidate.id, resultArr:[]};
 				filterArr.forEach(function(filter){
-					result.resultArr.push({filterName:filter.filterName, done:filter.func(candidate.value)});
+					if ( applyFilter.includes(filter.filterName) ){
+						result.resultArr.push({filterName:filter.filterName, done:filter.func(candidate.value)});
+					}
 				});
 				resultArr.push(result);
 			}
 			return resultArr;
 		}
+		var showResultRef;
 		function test(containerId, candidateArr, showFlag = true){
 			var resultArr = validCheck(filterArr, candidateArr);
 			if ( showFlag ){
 				showResultDiv(containerId, resultArr);
 			}
+			showResultRef = showResultDiv.bind(null, containerId, resultArr);			
 			return resultArr;
 		}
+		function showResult(){
+			showResultRef();
+		};
 		function showResultDiv(containerId, resultArr){
 			var resultDiv, closeBtn;
 			var container = document.getElementById(containerId);
@@ -69,7 +77,7 @@
 		var makeId = function () {
 			return '_' + Math.random().toString(36).substr(2, 9);
 		};
-		return test;
+		return {test:test, showResult:showResult};
 	}
 	global.FilterModule = filterModule;
 })(window||this);

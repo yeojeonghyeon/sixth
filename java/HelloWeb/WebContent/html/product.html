@@ -11,7 +11,7 @@ form#searchForm {
 	justify-content: space-around;
 	border: 1px solid #bbbbbb;
 	background-color: #6200ee;
-	color: white;
+/* 	color: white; */
 	width: 50vw;
 	height: 30vh;
 }
@@ -87,28 +87,34 @@ div.hide{
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-// 	var firstObj = document.getElementById("firstNum");
-// 	var secondObj = document.getElementById("secondNum");
- // 숫자가 하나 이상 올때만 true
 	document.getElementById("submitBtn").addEventListener("click", function(e){
 		var validCandiList = [];
+		
 		for(var ele of this.parentNode.children){
 			if ( ele.dataset.valid == 'y' ) validCandiList.push(ele);
 		}
+
 		var module = FilterModule();
-		module("searchForm", validCandiList);
-		e.preventDefault();
+		var results = module.test("searchForm", validCandiList, false);
+		var notPassed = results.map(ele => ele.resultArr).some(ele => {
+			return ele.some(ele => ele.done == false);
+		});
+		
+ 		if ( notPassed ){
+ 			module.showResult();
+			e.preventDefault();
+ 		}
 	});
 });
 </script>
 </head>
 <body>
 	<form id="searchForm" method="post" action="../jsp/Product.jsp">
-		<input type="text" data-valid="y" name="productName" value="">
-		<input type="text" data-valid="y" name="productCode" value="">
-		<input type="text" data-valid="y" name="productPrice" value="">
-		<input type="text" data-valid="y" name="firstNum" value="" placeholder="첫번째수">
-		<input type="text" data-valid="y" name="secondNum" value="" placeholder="두번째수">
+		<input type="text" data-valid="y" data-filter="isNotEmpty" name="productName" value="">
+		<input type="text" data-valid="y" data-filter="isNotEmpty" name="productCode" value="">
+		<input type="text" data-valid="y" data-filter="isNotEmpty|isNumeric" name="productPrice" value="">
+		<input type="text" data-valid="y" data-filter="isNotEmpty|isNumeric" name="firstNum" value="" placeholder="첫번째수">
+		<input type="text" data-valid="y" data-filter="isNotEmpty|isNumeric" name="secondNum" value="" placeholder="두번째수">
 		<input id="submitBtn" type="submit" value="제출">
 	</form>
 </body>
