@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Product Information</title>
+<script defer src="../js/validation.js"></script>
+<style>
+form#searchForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	border: 1px solid #bbbbbb;
+	background-color: #6200ee;
+	color: white;
+	width: 50vw;
+	height: 30vh;
+}
+form#searchForm > input[type=text]{
+	flex-grow: 1;
+	background-color: #6200ee;
+	color: white;	
+}
+
+form#searchForm, form#inputForm{
+	position: relative;
+}
+
+div > input.closeBtn{
+	right: 0;
+	position: absolute;
+    border: 1px solid #ccc;
+	background-color: red;
+    /* padding: 5px; */
+    font-family: "Courier New";
+	box-shadow: 2px 2px;	
+	/* animation-duration: 2s;
+  	animation-name: slidein;	 */
+}
+
+div.show{
+	z-index: 2;
+	top: 100%;
+	position: absolute;
+    border: 1px solid #ccc;
+	background-color: azure;
+    padding: 5px;
+    font-family: "Courier New";
+	box-shadow: 2px 2px;	
+	animation-duration: 1.5s;
+  	animation-name: slidein;	
+}
+
+div.hide{
+	z-index: 2;	
+	top: 100%;
+	position: absolute;
+    border: 1px solid #ccc;
+	background-color: azure;
+    padding: 5px;
+    font-family: "Courier New";
+	box-shadow: 2px 2px;	
+	animation-duration: 1.5s;
+  	animation-name: slideout;	
+}
+
+@keyframes slidein {
+  from {
+    top: 0%;
+	opacity: 0%;
+  }
+  to {
+    top: 100%;
+	opacity: 100%;	
+  }
+}
+
+@keyframes slideout {
+  from {
+    top: 100%;
+	opacity: 100%;		  
+  }
+  to {
+    top: 0%;
+	opacity: 0%;
+  }
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+// 	var firstObj = document.getElementById("firstNum");
+// 	var secondObj = document.getElementById("secondNum");
+ // 숫자가 하나 이상 올때만 true
+	document.getElementById("submitBtn").addEventListener("click", function(e){
+		var validCandiList = [];
+		for(var ele of this.parentNode.children){
+			if ( ele.dataset.valid == 'y' ) validCandiList.push(ele);
+		}
+		var module = FilterModule();
+		module("searchForm", validCandiList);
+		e.preventDefault();
+	});
+});
+</script>
+</head>
+<body>
+	<form id="searchForm" method="post" action="../jsp/Product.jsp">
+		<input type="text" data-valid="y" name="productName" value="">
+		<input type="text" data-valid="y" name="productCode" value="">
+		<input type="text" data-valid="y" name="productPrice" value="">
+		<input type="text" data-valid="y" name="firstNum" value="" placeholder="첫번째수">
+		<input type="text" data-valid="y" name="secondNum" value="" placeholder="두번째수">
+		<input id="submitBtn" type="submit" value="제출">
+	</form>
+</body>
+</html>

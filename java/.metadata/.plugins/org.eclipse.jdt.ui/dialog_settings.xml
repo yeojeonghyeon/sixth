@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\dev\lib\jstl"/>
+	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\dev\lib"/>
 	<section name="completion_proposal_size">
 	</section>
 	<section name="quick_assist_proposal_size">

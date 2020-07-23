@@ -11,7 +11,8 @@
 <fullyQualifiedTypeName name="java.util.stream.IntStream"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.net.URLEncoder"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.helloworld.vo.MenuItem"/>
 </qualifiedTypeNameHistroy>
