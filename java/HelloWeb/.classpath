@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="C:/dev/lib/jstl/taglibs-standard-impl-1.2.5.jar"/>
 	<classpathentry kind="lib" path="C:/dev/lib/jstl/taglibs-standard-spec-1.2.5.jar"/>
 	<classpathentry kind="lib" path="C:/dev/lib/gson-2.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/dev/lib/ojdbc/ojdbc7.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

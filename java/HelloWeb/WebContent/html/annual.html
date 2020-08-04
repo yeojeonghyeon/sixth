@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style>
+.grid-container {
+	width: 60%;
+	display: grid;
+	grid-template-columns: 30% 70%;
+	background-image: linear-gradient(to bottom right, #95a1b3, #1b6953, #808217);
+	padding: 5px;
+}
+.grid-item {
+	background-color: rgba(255, 255, 255, 0.9);
+	border: 0.2px solid rgba(0, 0, 0, 0.8);
+	padding: 10px;
+	font-size: 1em;
+	text-align: left;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h3>폼 전송 예제</h3>
+	</header>
+	<nav>
+	</nav>
+	<section>
+		<article>
+			<form action="../EmpAnnualPayServlet" method="POST">
+				<div class="grid-container">
+					<div class="grid-item">
+						<span>조회년도:&nbsp;</span>
+					</div>
+					<div class="grid-item">
+						<input type="text" name="bonusYear" placeholder="조회년도를 입력하세요!">
+					</div>
+				</div>
+				<div><input type="submit" value="전송"></div>
+			</form>
+		</article>
+	</section>
+	<footer>
+	</footer>
+</body>
+</html>

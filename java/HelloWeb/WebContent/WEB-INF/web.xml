@@ -99,4 +99,14 @@
     <servlet-name>ChainedServlet</servlet-name>
     <url-pattern>/ChainedServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmpAnnualPayServlet</display-name>
+    <servlet-name>EmpAnnualPayServlet</servlet-name>
+    <servlet-class>com.helloworld.servlet.EmpAnnualPayServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmpAnnualPayServlet</servlet-name>
+    <url-pattern>/EmpAnnualPayServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
