@@ -1,31 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns = "http://www.springframework.org/schema/beans"
    xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
    xsi:schemaLocation = "http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-   
-   <bean id = "helloWorld" class = "com.edu.scci.sp.HelloWorld" scope="prototype">
-      <property name = "message" value = "Hello World!"/>
-   </bean>
-   
-	<bean id="exampleBean" class="com.edu.scci.sp.ExampleBean">
-		<property name="prop" value="Initialize" />
-	</bean>
-	
-	<bean id="exampleBean1" class="com.edu.scci.sp.ExampleBean" init-method="init">
-		<property name="prop" value="Initialize2222" />
-	</bean>	
-	
-<!-- 	<bean class="com.edu.scci.sp.InitializePostProcessor" /> -->
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:annotation-config/>
 	
 	<bean id="person" class="com.edu.scci.sp.Person">
 		<property name="name" value="hong" />
 		<property name="address" value="seoul" />
 	</bean>
 	
-	<bean id="student" class="com.edu.scci.sp.Student" parent="person">
-		<property name="name" value="kim" />
-		<property name="roomNo" value="3" />
+<!-- 	<bean id="student" class="com.edu.scci.sp.Student" parent="person"> -->
+<!-- 		<property name="name" value="kim" /> -->
+<!-- 		<property name="roomNo" value="3" /> -->
+<!-- 	</bean> -->
+	
+	<bean id="lPrinter" class="com.edu.scci.sp.di.LPrinter" />
+	<bean id="hPrinter" class="com.edu.scci.sp.di.HPrinter" />
+	<bean id="printer" class="com.edu.scci.sp.di.HPrinter" />
+	
+	<bean id="multiMachine" class="com.edu.scci.sp.di.MultiMachine">
+		<constructor-arg ref="hPrinter"/>
+	</bean>
+	
+	<bean id="multiMachineSetter" class="com.edu.scci.sp.di.MultiMachine" autowire="byName">
+<!-- 		<property name="printer" ref="lPrinter" /> -->
+	</bean>
+	
+	<bean id="textEditor" class="com.edu.scci.sp.di.TextEditor" autowire="byType">
+		<property name="name" value="Generic Text Editor" />
+	</bean>
+	<bean class="com.edu.scci.sp.di.SpellChecker" />
+<!-- 	<bean class="com.edu.scci.sp.di.SpellChecker" /> -->
+
+	<bean id="student" class="com.edu.scci.sp.di.Student">
+		<property name="name" value="Kim" />
+		<property name="age" value="15" />
 	</bean>
 
 </beans>
