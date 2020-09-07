@@ -15,4 +15,5 @@
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.helloworld.vo.MenuItem"/>
+<fullyQualifiedTypeName name="com.edu.scci.sp.di.Student"/>
 </qualifiedTypeNameHistroy>
