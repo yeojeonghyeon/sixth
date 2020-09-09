@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.heygirl.edu">
+	<logger name="com.edu.scci">
 		<level value="info" />
 	</logger>
 	
