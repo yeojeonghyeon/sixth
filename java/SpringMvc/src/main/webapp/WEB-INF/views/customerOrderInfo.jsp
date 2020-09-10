@@ -10,9 +10,9 @@
 
 <p> ${param.paramName} ${param.paramAge}. </p>
 <ul>
-<c:forEach var="customer" items="${customers}">
-	<li>${customer.custId} ${customer.custNm} ${customer.address} ${customer.phone}</li>
-</c:forEach>
+<%-- <c:forEach var="customer" items="${customers}"> --%>
+	<li>${result.CUST_ID} ${result.CUST_NM} ${result.TOT_AMT}</li>
+<%-- </c:forEach> --%>
 </ul>
 </body>
 </html>

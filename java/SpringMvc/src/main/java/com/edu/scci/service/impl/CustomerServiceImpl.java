@@ -1,6 +1,7 @@
 package com.edu.scci.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -20,5 +21,11 @@ public class CustomerServiceImpl implements CustomerService {
 	public List<CustomerVO> getAllCustomers() {
 		// TODO Auto-generated method stub
 		return customerDao.getAllCustomer();
+	}
+
+	@Override
+	public Map<String, String> getOrderAmtByCustId(String custId) {
+		// TODO Auto-generated method stub
+		return customerDao.getOrderAmtByCustId(custId);
 	}
 }

@@ -1,6 +1,7 @@
 package com.edu.scci.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -19,6 +20,12 @@ public class CustomerDAOImpl implements CustomerDAO {
 	public List<CustomerVO> getAllCustomer() {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("com.edu.scci.customer.getAllCustomers");
+	}
+
+	@Override
+	public Map<String, String> getOrderAmtByCustId(String custId) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("com.edu.scci.customer.getOrderAmtByCustId", custId);
 	}
 
 }

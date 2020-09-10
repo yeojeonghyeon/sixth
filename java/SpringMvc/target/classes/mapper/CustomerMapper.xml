@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 <mapper namespace="com.edu.scci.customer">
-	<select id="getAllCustomers" resultType="com.edu.scci.vo.CustomerVO">
-		SELECT A.CUST_ID "custId", A.CUST_NM "custNm", A.ADDRESS, A.PHONE
+	<select id="getAllCustomers" resultType="CustomerVO">
+		SELECT A.CUST_ID, A.CUST_NM, A.ADDRESS, A.PHONE
   		  FROM CUSTOMER A
+	</select>
+	<select id="getOrderAmtByCustId" parameterType="String" resultType="hashmap">
+		SELECT A.CUST_ID, A.CUST_NM, B.TOT_AMT
+	      FROM CUSTOMER A INNER JOIN ( SELECT A.CUST_ID, SUM(B.QTY*B.UNIT_PRICE) TOT_AMT
+	                                 FROM ORDERS A INNER JOIN ORDERS_DET B ON A.ORD_ID = B.ORD_ID
+	                               GROUP BY A.CUST_ID ) B ON A.CUST_ID = B.CUST_ID
+	     WHERE A.CUST_ID = #{custId}
 	</select>
 </mapper>
