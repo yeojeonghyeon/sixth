@@ -6,7 +6,7 @@
 	<title>addCustomer</title>
 	<script>
 		var result = "${affectedCount}";
-		if ( result ) alert(`${result} 건이 추가되었습니다.`);
+		if ( result ) alert(result+"건이 추가 되었습니다");
 	</script>
 </head>
 <body>
@@ -24,10 +24,10 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><input type="text" name="custId" value="${customer.custId}"></td>
-					<td><input type="text" name="custNm" value="${customer.custNm}"></td>
-					<td><input type="text" name="address" value="${customer.address}"></td>
-					<td><input type="text" name="phone" value="${customer.phone}"></td>
+					<td><input type="text" name="custId" value="${customerVO.custId}"></td>
+					<td><input type="text" name="custNm" value="${customerVO.custNm}"></td>
+					<td><input type="text" name="address" value="${customerVO.address}"></td>
+					<td><input type="text" name="phone" value="${customerVO.phone}"></td>
 				</tr>
 			</tbody>
 		</table>
