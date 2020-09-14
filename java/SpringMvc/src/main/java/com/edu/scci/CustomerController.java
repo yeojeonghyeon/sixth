@@ -55,4 +55,16 @@ public class CustomerController {
 		model.addAttribute("affectedCount", affectedCount);
 		return "addCustomer";
 	}
+	
+	@RequestMapping(value = "/orderInfo", method = RequestMethod.GET)
+	public String getOrderInfo(String custId, Model model) {
+		return "orderInfo";
+	}	
+	
+	@RequestMapping(value = "/orderInfo.ajax", method = RequestMethod.POST)
+	public String getOrderAmtByCustIdAjax(String custId, Model model) {
+		Map<String, String> orderInfoMap = customerService.getOrderAmtByCustId(custId);				
+		model.addAttribute("result", orderInfoMap );
+		return "jsonView";
+	}
 }
