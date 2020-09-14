@@ -8,4 +8,5 @@ import com.edu.scci.vo.CustomerVO;
 public interface CustomerService {
 	public List<CustomerVO> getAllCustomers();
 	public Map<String, String> getOrderAmtByCustId(String custId);
+	public int addCustomer(CustomerVO customer);
 }

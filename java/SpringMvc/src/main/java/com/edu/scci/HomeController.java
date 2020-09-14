@@ -42,8 +42,6 @@ public class HomeController {
 	@RequestMapping(value = "/a", method = RequestMethod.GET)
 	public String a(@RequestParam String paramName, String paramAge) {
 		logger.info("/a {}", paramName+ "" +paramAge);
-				
-//		model.addAttribute("serverTime", formattedDate );
 		return "a";
 	}
 	

@@ -18,14 +18,17 @@ public class CustomerDAOImpl implements CustomerDAO {
 	
 	@Override
 	public List<CustomerVO> getAllCustomer() {
-		// TODO Auto-generated method stub
 		return sqlSession.selectList("com.edu.scci.customer.getAllCustomers");
 	}
 
 	@Override
 	public Map<String, String> getOrderAmtByCustId(String custId) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectOne("com.edu.scci.customer.getOrderAmtByCustId", custId);
+	}
+
+	@Override
+	public int addCustomer(CustomerVO customer) {
+		return sqlSession.insert("com.edu.scci.customer.addCustomer", customer);
 	}
 
 }

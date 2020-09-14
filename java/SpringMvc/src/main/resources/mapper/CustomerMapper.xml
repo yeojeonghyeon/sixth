@@ -8,8 +8,17 @@
 	<select id="getOrderAmtByCustId" parameterType="String" resultType="hashmap">
 		SELECT A.CUST_ID, A.CUST_NM, B.TOT_AMT
 	      FROM CUSTOMER A INNER JOIN ( SELECT A.CUST_ID, SUM(B.QTY*B.UNIT_PRICE) TOT_AMT
-	                                 FROM ORDERS A INNER JOIN ORDERS_DET B ON A.ORD_ID = B.ORD_ID
-	                               GROUP BY A.CUST_ID ) B ON A.CUST_ID = B.CUST_ID
+	                                     FROM ORDERS A INNER JOIN ORDERS_DET B ON A.ORD_ID = B.ORD_ID
+	                                   GROUP BY A.CUST_ID ) B ON A.CUST_ID = B.CUST_ID
 	     WHERE A.CUST_ID = #{custId}
 	</select>
+	<insert id="addCustomer" parameterType="CustomerVO">
+		INSERT INTO CUSTOMER(CUST_ID, CUST_NM, ADDRESS, PHONE)
+		VALUES(
+		    #{custId},
+		    #{custNm},
+		    #{address},
+		    #{phone}
+		)
+	</insert>
 </mapper>

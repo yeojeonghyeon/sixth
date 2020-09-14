@@ -19,13 +19,16 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Override
 	public List<CustomerVO> getAllCustomers() {
-		// TODO Auto-generated method stub
 		return customerDao.getAllCustomer();
 	}
 
 	@Override
 	public Map<String, String> getOrderAmtByCustId(String custId) {
-		// TODO Auto-generated method stub
 		return customerDao.getOrderAmtByCustId(custId);
+	}
+
+	@Override
+	public int addCustomer(CustomerVO customer) {
+		return customerDao.addCustomer(customer);
 	}
 }
