@@ -2,10 +2,12 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<settings>
-		<setting name="mapUnderscoreToCamelCase" value="true"/>
-		<setting name="callSettersOnNulls" value="true"/>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<setting name="callSettersOnNulls" value="true" />
 	</settings>
 	<typeAliases>
-	  <typeAlias alias="CustomerVO" type="com.edu.scci.vo.CustomerVO"/>
+		<typeAlias alias="CustomerVO" type="com.edu.scci.vo.CustomerVO" />
+		<typeAlias alias="BookVO" type="com.edu.scci.vo.BookVO" />
 	</typeAliases>
+
 </configuration>

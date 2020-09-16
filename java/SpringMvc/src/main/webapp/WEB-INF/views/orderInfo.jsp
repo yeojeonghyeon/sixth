@@ -12,12 +12,15 @@ document.addEventListener("DOMContentLoaded", function(){
 		httpRequest.onreadystatechange = function(){
 			if ( httpRequest.readyState == XMLHttpRequest.DONE ){
 				if ( httpRequest.status == '200' ){
-					console.log(JSON.parse(httpRequest.responseText));
+					var result = JSON.parse(httpRequest.responseText);
+					document.getElementById("container").innerText = `\${result.result.CUST_ID}\n
+						\${result.result.CUST_NM}\n
+						\${result.result.TOT_AMT}`;
 				}
 			}
 		};
 		var custId = document.querySelector("#custId");
-		var params = 'custId='+custId.value;
+		var params = `custId=\${custId.value}`;
 	    httpRequest.open('post', 'orderInfo.ajax');
 		httpRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	    httpRequest.send(params);
