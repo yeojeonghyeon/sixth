@@ -57,9 +57,11 @@ document.addEventListener("DOMContentLoaded", function(){
 
 (function(global){
 	var seq = -1;
-	var optionHtml = '';	
+	var optionHtml = '';
+	var unitPriceArr = [];
 	<c:forEach var="book" items="${books}">
 		optionHtml += '<option value=${book.bookId}>${book.bookNm}</option>';
+		unitPriceArr.push({bookId:'${book.bookId}', unitPrice:'${book.price}'});
 	</c:forEach>	
 	
 	function increment(){
@@ -73,11 +75,22 @@ document.addEventListener("DOMContentLoaded", function(){
 		var productObj = document.createElement("select");
 		productObj.innerHTML = optionHtml;
 		productObj.name = `details[\${seq}].bookId`;
+		productObj.addEventListener("change", function(){
+			var bookPrice = unitPriceArr.filter( item => item.bookId === this.value )[0];
+			document.getElementById(`details[\${seq}].unitPrice`).value = bookPrice.unitPrice;
+		});
 		firstInnerDiv.appendChild(productObj);
 		var quantityObj = document.createElement("input");
 		quantityObj.name = `details[\${seq}].qty`;
 		quantityObj.type = "text";
 		quantityObj.value = quantity;
+		
+		let priceObj = document.createElement("input");
+		priceObj.name = `details[\${seq}].unitPrice`;
+		priceObj.id = `details[\${seq}].unitPrice`;		
+		priceObj.type = "text";
+		priceObj.value = unitPriceArr[0].unitPrice;
+		
 		var incrementBtn = document.createElement("input");
 		incrementBtn.type = "button";
 		incrementBtn.value = "+";
@@ -92,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			quantity--;
 			quantityObj.value = quantity;
 		});
+		secondInnerDiv.appendChild(priceObj);
 		secondInnerDiv.appendChild(quantityObj);
 		secondInnerDiv.appendChild(incrementBtn);
 		secondInnerDiv.appendChild(decrementBtn);

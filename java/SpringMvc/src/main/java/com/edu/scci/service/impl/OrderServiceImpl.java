@@ -28,7 +28,6 @@ public class OrderServiceImpl implements OrderService {
 		for(int i=0; i<orderDets.size(); i++) {
 			OrderDetVO det = orderDets.get(i);
 			det.setOrdId(ordId);
-			det.setUnitPrice(10000);
 			orderDao.addDetail(det);
 		}
 	}
