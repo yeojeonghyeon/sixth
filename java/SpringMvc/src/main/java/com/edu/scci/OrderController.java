@@ -12,11 +12,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.edu.scci.service.CustomerService;
 import com.edu.scci.service.OrderService;
 import com.edu.scci.vo.BookVO;
 import com.edu.scci.vo.CustomerVO;
+import com.edu.scci.vo.OrderVO;
 
 /**
  * Handles requests for the application home page.
@@ -40,6 +42,13 @@ public class OrderController {
 		List<BookVO> books = orderService.getAllBooks();
 		model.addAttribute("customers", customers);
 		model.addAttribute("books", books);
+		return "registerOrder";
+	}
+	
+	@RequestMapping(value = "/registerOrder", method = RequestMethod.POST)
+	public String registerOrder(OrderVO order, Model model) {
+		orderService.addOrder(order, null);
+		model.addAttribute("result", "success");
 		return "registerOrder";
 	}
 }

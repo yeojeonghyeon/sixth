@@ -5,4 +5,18 @@
 		SELECT A.BOOK_ID, A.BOOK_NM, A.PUBLISHER, A.PRICE
   		  FROM BOOK A
 	</select>
+
+	<select id="getOrdId" resultType="string">
+		SELECT TO_CHAR(SYSDATE,'YYYYMMDD')||LPAD(COMMON_SEQ.NEXTVAL, 12, 0)
+ 			  FROM DUAL
+	</select>
+	
+	<insert id="addOrder" parameterType="OrderVO">
+		INSERT INTO ORDERS(ORD_ID, CUST_ID, ORD_DT)
+		VALUES(
+			#{ordId},
+			#{custId},
+			SYSDATE
+		)
+	</insert>
 </mapper>

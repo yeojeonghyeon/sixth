@@ -124,15 +124,18 @@ document.addEventListener("DOMContentLoaded", function(){
 			</div>
 		</section>
 		<section class="content-right">
-			<h4>주문 하기</h4>
-			<div style="display: flex; justify-content: center;">
-				<input type="text" id="custId">
-				<input type="text" id="custNm">
-			</div>
-			<div style="display: flex; justify-content: flex-end;">
-				<input type="button" id="addOrder" value="+">
-			</div>
-			<div id="orderContainer"></div>
+			<form action="registerOrder" method="post">
+				<h4>주문 하기</h4>
+				<div style="display: flex; justify-content: center;">
+					<input type="text" name="custId" id="custId">
+					<input type="text" name="custNm" id="custNm">
+					<input type="submit" value="상품주문">
+				</div>
+				<div style="display: flex; justify-content: flex-end;">
+					<input type="button" id="addOrder" value="+">
+				</div>
+				<div id="orderContainer"></div>
+			</form>			
 		</section>
 	</article>
 </body>

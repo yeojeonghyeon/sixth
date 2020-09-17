@@ -16,5 +16,6 @@
 <fullyQualifiedTypeName name="com.helloworld.vo.MenuItem"/>
 <fullyQualifiedTypeName name="com.edu.scci.sp.di.Student"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
+<fullyQualifiedTypeName name="com.edu.scci.service.OrderService"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.edu.scci.vo.BookVO;
+import com.edu.scci.vo.OrderVO;
 
 @Repository
 public class OrderDAOImpl implements OrderDAO {
@@ -19,5 +20,17 @@ public class OrderDAOImpl implements OrderDAO {
 	public List<BookVO> getAllBooks() {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("com.edu.scci.order.getAllBooks");
+	}
+
+	@Override
+	public int addOrder(OrderVO order) {
+		// TODO Auto-generated method stub
+		return sqlSession.insert("com.edu.scci.order.addOrder", order);
+	}
+
+	@Override
+	public String getOrderId() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("com.edu.scci.order.getOrdId");
 	}
 }

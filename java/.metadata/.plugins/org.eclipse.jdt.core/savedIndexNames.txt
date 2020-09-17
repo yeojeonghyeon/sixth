@@ -66,7 +66,6 @@ INDEX VERSION 1.131+C:\dev\git\sixth\java\.metadata\.plugins\org.eclipse.jdt.cor
 3421819425.index
 2906249347.index
 2055351946.index
-1010881187.index
 2537637377.index
 2673301990.index
 3863307883.index
