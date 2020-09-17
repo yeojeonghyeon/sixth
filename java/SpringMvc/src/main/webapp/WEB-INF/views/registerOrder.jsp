@@ -19,6 +19,16 @@
 	background-color: white; 
 }
 
+.content-body > .content-right div {
+	width: 80%;
+	border: 1px solid pink;
+}
+
+#orderContainer {
+	overflow: auto;
+	border: 1px solid pink;
+}
+
 #custTbl > tbody > tr {
 	background-color: white;
 }
@@ -46,16 +56,14 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 (function(global){
-	var seq = 0;
-	var productPrefix = 'product';
-	var quantityPrefix = 'quantity';
+	var seq = -1;
 	var optionHtml = '';	
 	<c:forEach var="book" items="${books}">
 		optionHtml += '<option value=${book.bookId}>${book.bookNm}</option>';
 	</c:forEach>	
 	
 	function increment(){
-		return seq++;		
+		return ++seq;		
 	}
 	function addItem(containerId){
 		var quantity = 1, seq = increment(), outerDiv = document.createElement("div");
@@ -64,10 +72,10 @@ document.addEventListener("DOMContentLoaded", function(){
 		outerDiv.appendChild(secondInnerDiv);
 		var productObj = document.createElement("select");
 		productObj.innerHTML = optionHtml;
-		productObj.name = productPrefix + seq;
+		productObj.name = `details[\${seq}].bookId`;
 		firstInnerDiv.appendChild(productObj);
 		var quantityObj = document.createElement("input");
-		quantityObj.name = quantityPrefix + seq;
+		quantityObj.name = `details[\${seq}].qty`;
 		quantityObj.type = "text";
 		quantityObj.value = quantity;
 		var incrementBtn = document.createElement("input");

@@ -9,6 +9,7 @@
 		<typeAlias alias="CustomerVO" type="com.edu.scci.vo.CustomerVO" />
 		<typeAlias alias="BookVO" type="com.edu.scci.vo.BookVO" />
 		<typeAlias alias="OrderVO" type="com.edu.scci.vo.OrderVO" />
+		<typeAlias alias="OrderDetVO" type="com.edu.scci.vo.OrderDetVO" />
 	</typeAliases>
 
 </configuration>

@@ -1,11 +1,8 @@
 package com.edu.scci.service.impl;
 
 import java.util.List;
-
 import javax.inject.Inject;
-
 import org.springframework.stereotype.Service;
-
 import com.edu.scci.dao.OrderDAO;
 import com.edu.scci.service.OrderService;
 import com.edu.scci.vo.BookVO;
@@ -20,15 +17,19 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public List<BookVO> getAllBooks() {
-		// TODO Auto-generated method stub
 		return orderDao.getAllBooks();
 	}
 
 	@Override
 	public void addOrder(OrderVO order, List<OrderDetVO> orderDets) {
-		// TODO Auto-generated method stub
 		String ordId = orderDao.getOrderId();
 		order.setOrdId(ordId);
 		orderDao.addOrder(order);
+		for(int i=0; i<orderDets.size(); i++) {
+			OrderDetVO det = orderDets.get(i);
+			det.setOrdId(ordId);
+			det.setUnitPrice(10000);
+			orderDao.addDetail(det);
+		}
 	}
 }

@@ -1,9 +1,18 @@
 package com.edu.scci.vo;
 
+import java.util.List;
+
 public class OrderVO {
 	private String ordId;
 	private String custId;
 	private String ordDt;
+	private List<OrderDetVO> details;
+	public List<OrderDetVO> getDetails() {
+		return details;
+	}
+	public void setDetails(List<OrderDetVO> details) {
+		this.details = details;
+	}
 	public String getOrdId() {
 		return ordId;
 	}

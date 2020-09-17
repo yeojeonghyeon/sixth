@@ -19,4 +19,10 @@
 			SYSDATE
 		)
 	</insert>
+	
+	<insert id="addDetails" parameterType="OrderDetVO">
+		INSERT INTO ORDERS_DET(ORD_SEQ, ORD_ID, BOOK_ID, UNIT_PRICE, QTY)
+		VALUES		
+		(LPAD(COMMON_SEQ.NEXTVAL, 10, 0), #{ordId}, #{bookId}, #{unitPrice}, #{qty})
+	</insert>	
 </mapper>
