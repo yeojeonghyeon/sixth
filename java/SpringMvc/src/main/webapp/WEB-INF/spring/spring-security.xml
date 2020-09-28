@@ -1,0 +1,36 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+	<http auto-config="true" use-expressions="true">
+		<intercept-url pattern="/welcome/**" access="permitAll" />
+		<intercept-url pattern="/customers/**" access="permitAll" />
+		<intercept-url pattern="/admin*" access="hasRole('ROLE_ADMIN')" />
+
+		<form-login login-page="/login" default-target-url="/customers/all"
+			authentication-failure-url="/loginError" />
+		<logout logout-success-url="/logout" logout-url="/j_spring_security_logout" />
+		<csrf disabled="true" />
+	</http>
+
+	<authentication-manager>
+		<authentication-provider>
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="select cust_id user_name, pwd password, 1 enabled from customer where cust_id = ?"
+				authorities-by-username-query="select u.cust_id user_name, ur.role_id authority from customer u, user_role_map ur where u.cust_id = ur.cust_id and u.cust_id = ? " />
+		</authentication-provider>
+	</authentication-manager>
+
+<!-- 	<beans:bean id="dataSource" -->
+<!-- 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
+<!-- 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" /> -->
+<!-- 		<beans:property name="url" -->
+<!-- 			value="jdbc:mysql://localhost:3306/spring" /> -->
+<!-- 		<beans:property name="username" value="root" /> -->
+<!-- 		<beans:property name="password" value="mukesh" /> -->
+<!-- 	</beans:bean> -->
+
+</beans:beans>
