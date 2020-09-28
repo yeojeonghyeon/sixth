@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.edu</groupId>
@@ -10,7 +11,7 @@
 	<properties>
 		<java-version>1.8</java-version>
 		<org.springframework-version>4.2.1.RELEASE</org.springframework-version>
-		<security.version>4.0.3.RELEASE</security.version>		
+		<security.version>4.0.3.RELEASE</security.version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
@@ -25,8 +26,7 @@
 	</repositories>
 
 	<dependencies>
-	
-			<!-- Spring Security -->
+		<!-- Spring Security -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
@@ -44,17 +44,17 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>${security.version}</version>
 		</dependency>
-	
+
 		<!-- json -->
 		<dependency>
-		       <groupId>com.fasterxml.jackson.core</groupId>
-		      <artifactId>jackson-core</artifactId>
-		      <version>2.4.3</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.4.3</version>
 		</dependency>
 		<dependency>
-		  <groupId>com.fasterxml.jackson.core</groupId>
-		  <artifactId>jackson-databind</artifactId>
-		  <version>2.4.3</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.4.3</version>
 		</dependency>
 
 		<dependency>

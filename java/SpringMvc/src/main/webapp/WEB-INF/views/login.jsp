@@ -31,12 +31,9 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	<%
-		String errorString = (String) request.getAttribute("error");
-		if (errorString != null && errorString.trim().equals("true")) {
-			out.println("<span class=\"errorblock\">Incorrect login name or password. Please try again");
-		}
-	%>
+	<c:if test="${error eq 'true'}">
+		<h3>Incorrect login name or password. Please try again</h3>
+	</c:if>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
