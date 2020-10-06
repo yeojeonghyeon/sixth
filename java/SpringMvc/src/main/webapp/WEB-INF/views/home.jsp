@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
@@ -10,14 +12,11 @@
 
     <title>Collapsible sidebar using Bootstrap 4</title>
 
-    <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="<c:url value='/resources/vendor/bootstrap/css/bootstrap.min.css'/>">
-    <!-- Our Custom CSS -->
     <link rel="stylesheet" href="<c:url value='/resources/css/style5.css'/>">
 
     <!-- Font Awesome JS -->
 	<link rel="stylesheet" type="text/css" href="<c:url value='/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css'/>" />
-	<link rel="stylesheet" type="text/css" href="<c:url value='/resources/fonts/Linearicons-Free-v1.0.0/icon-font.min.css'/>" />
 
 </head>
 
@@ -36,10 +35,10 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">Home 1</a>
+                            <a href="customers/all">customers all</a>
                         </li>
                         <li>
-                            <a href="#">Home 2</a>
+                            <a href="order/registerOrder">상품 주문</a>
                         </li>
                         <li>
                             <a href="#">Home 3</a>
