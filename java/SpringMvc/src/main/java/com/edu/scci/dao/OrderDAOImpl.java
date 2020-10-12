@@ -1,6 +1,7 @@
 package com.edu.scci.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -39,5 +40,11 @@ public class OrderDAOImpl implements OrderDAO {
 	public int addDetail(OrderDetVO details) {
 		// TODO Auto-generated method stub
 		return sqlSession.insert("com.edu.scci.order.addDetails", details);
+	}
+
+	@Override
+	public List<Map<String, String>> getOrderList(Map<String, String> param) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("com.edu.scci.order.getOrderList", param);
 	}
 }

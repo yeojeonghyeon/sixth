@@ -1,6 +1,8 @@
 package com.edu.scci.service.impl;
 
 import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 import com.edu.scci.dao.OrderDAO;
@@ -30,5 +32,11 @@ public class OrderServiceImpl implements OrderService {
 			det.setOrdId(ordId);
 			orderDao.addDetail(det);
 		}
+	}
+
+	@Override
+	public List<Map<String, String>> getOrderList(Map<String, String> param) {
+		// TODO Auto-generated method stub
+		return orderDao.getOrderList(param);
 	}
 }

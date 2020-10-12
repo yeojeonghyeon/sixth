@@ -17,6 +17,20 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener
 		</listener-class>
 	</listener>
+	
+<!-- 	<filter> -->
+<!-- 	    <filter-name>httpHeaderSecurity</filter-name> -->
+<!-- 	    <filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter</filter-class> -->
+<!-- 	    <init-param> -->
+<!-- 	        <param-name>antiClickJackingOption</param-name> -->
+<!-- 	        <param-value>SAMEORIGIN</param-value> -->
+<!-- 	    </init-param> -->
+<!-- 	</filter> -->
+	
+<!-- 	<filter-mapping> -->
+<!-- 	    <filter-name>httpHeaderSecurity</filter-name> -->
+<!-- 	    <url-pattern>/*</url-pattern> -->
+<!-- 	</filter-mapping> -->
 
 	<filter>
 		<filter-name>encodingFilter</filter-name>
@@ -45,7 +59,21 @@
 		<filter-name>springSecurityFilterChain</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
+	
+	<filter>
+		<filter-name>httpHeaderSecurity</filter-name>
+		<filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter</filter-class>
+		<init-param>
+			<param-name>antiClickJackingOption</param-name>
+			<param-value>SAMEORIGIN</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>httpHeaderSecurity</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 
 	<!-- Processes application requests -->
 	<servlet>

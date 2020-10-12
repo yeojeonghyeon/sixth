@@ -11,6 +11,13 @@
  			  FROM DUAL
 	</select>
 	
+	<select id="getOrderList" resultType="hashmap" parameterType="hashmap">
+		SELECT B.ORD_ID, A.CUST_ID, A.CUST_NM, B.TOT_AMT, TO_CHAR(B.ORD_DT, 'YYYY-MM-DD HH24:MI:SS') ORD_DT
+	      FROM CUSTOMER A INNER JOIN ( SELECT B.ORD_ID, SUM(B.UNIT_PRICE*B.QTY) TOT_AMT, MAX(A.CUST_ID) CUST_ID, MAX(A.ORD_DT) ORD_DT
+	                                     FROM ORDERS A INNER JOIN ORDERS_DET B ON A.ORD_ID = B.ORD_ID
+	                                   GROUP BY B.ORD_ID ) B ON A.CUST_ID = B.CUST_ID  
+	</select>
+	
 	<insert id="addOrder" parameterType="OrderVO">
 		INSERT INTO ORDERS(ORD_ID, CUST_ID, ORD_DT)
 		VALUES(

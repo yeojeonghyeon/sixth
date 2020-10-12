@@ -6,7 +6,8 @@
       }
     }
   
-    funcArr[0](); // 1?
-    funcArr[1](); // 2?
-    funcArr[2](); // 3?
+    funcArr[0](); // ?
+    funcArr[1](); // ?
+    funcArr[2](); // ?
 })();
+

@@ -1,6 +1,7 @@
 package com.edu.scci;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -17,7 +19,6 @@ import com.edu.scci.service.CustomerService;
 import com.edu.scci.service.OrderService;
 import com.edu.scci.vo.BookVO;
 import com.edu.scci.vo.CustomerVO;
-import com.edu.scci.vo.OrderDetVO;
 import com.edu.scci.vo.OrderVO;
 
 /**
@@ -50,5 +51,13 @@ public class OrderController {
 		orderService.addOrder(order, order.getDetails());
 		model.addAttribute("result", "success");
 		return "registerOrder";
+	}
+	
+	@RequestMapping(value = "/orderList/{page}", method = {RequestMethod.GET, RequestMethod.POST})
+	public String orderList(@PathVariable String page, Model model) {
+		Map<String, String> param = null;
+		List<Map<String, String>> orders = orderService.getOrderList(param);
+		model.addAttribute("result", orders);
+		return "orderList";
 	}
 }
